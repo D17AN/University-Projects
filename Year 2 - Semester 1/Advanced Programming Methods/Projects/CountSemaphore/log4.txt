@@ -1,0 +1,374 @@
+ID: 3
+Execution Stack:
+string varf|varf = "test.txt"|OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+varf = "test.txt"|OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+string varf
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+varf = "test.txt"|OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+string varf
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+varf = "test.txt"|OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> ""
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+varf = "test.txt"|OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> ""
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+varf = "test.txt"
+SymbolTable:
+varf -> ""
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+varf = "test.txt"
+SymbolTable:
+varf -> ""
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+OpenReadFile(varf)|int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+OpenReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+OpenReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+Heap memory:
+
+ID: 3
+Execution Stack:
+int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+int varc|ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+int varc
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+int varc
+SymbolTable:
+varf -> "test.txt"
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 0
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 0
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+ReadFile(varf, varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 0
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+ReadFile(varf, varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 0
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+Print(varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+Print(varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+ReadFile(varf, varc)|Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|CloseReadFile(varf)
+ReadFile(varf, varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|CloseReadFile(varf)
+ReadFile(varf, varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 15
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+Print(varc)|CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+CloseReadFile(varf)
+Print(varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+CloseReadFile(varf)
+Print(varc)
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+50
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+CloseReadFile(varf)
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+50
+File table:
+test.txt
+Heap memory:
+
+ID: 3
+Execution Stack:
+SymbolTable:
+varf -> "test.txt"
+varc -> 50
+Output list:
+15
+50
+File table:
+test.txt
+Heap memory:
+

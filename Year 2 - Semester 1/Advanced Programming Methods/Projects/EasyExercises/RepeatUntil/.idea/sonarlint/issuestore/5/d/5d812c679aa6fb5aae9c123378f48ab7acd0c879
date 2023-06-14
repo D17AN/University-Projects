@@ -1,0 +1,46 @@
+
+a
+java:S1192F"KDefine a constant instead of duplicating this literal "\u001B[31m" 3 times.(•Ñº
+`
+java:S1192F"JDefine a constant instead of duplicating this literal "\u001B[0m" 3 times.(•Ñº
+g
+java:S6204%"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¦š)
+]
+java:S1612#"GReplace this lambda with method reference 'RefValue.class::isInstance'.(ä€Á·
+g
+java:S6204+"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¦š)
+b
+java:S1612)"GReplace this lambda with method reference 'RefValue.class::isInstance'.(½Êëùûÿÿÿÿ
+h
+java:S62049"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+G
+java:S1602:",Remove useless curly braces around statement(•ù¹–øÿÿÿÿ
+“
+java:S1130?"xRemove the declaration of thrown exception 'exceptions.ToyLanguageException', as it cannot be thrown from method's body.(¹—üíúÿÿÿÿ
+N	java:S106F"9Replace this use of System.out or System.err by a logger.(•Ñº
+h
+java:S6204K"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+h
+java:S6204X"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+y
+java:S2142R"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(Í„ì«üÿÿÿÿ
+N	java:S106S"9Replace this use of System.out or System.err by a logger.(•Ñº
+N	java:S106a"9Replace this use of System.out or System.err by a logger.(•Ñº
+
+java:S1130h"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¶ÿŒ”úÿÿÿÿ8Ôÿ™üÒ0
+Y
+java:S1155k">Use isEmpty() to check whether the collection is empty or not.(¿Æùøÿÿÿÿ
+h
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(Ú‚
+T	java:S106„"9Replace this use of System.out or System.err by a logger.(Êë”üÿÿÿÿ
+;
+java:S1128"Remove this duplicated import.(íÉû8êÿ™üÒ0
+;
+java:S1128"Remove this duplicated import.(íÉû8êÿ™üÒ0
+;
+java:S1128"Remove this duplicated import.(íÉû8ëÿ™üÒ0
+b
+java:S1128
+"@Remove this unused import 'domain.statement.StatementInterface'.(¤Ì±üúÿÿÿÿ8ëÿ™üÒ0
+f
+java:S1128"DRemove this unused import 'domain.utils.ADTStack.ADTStackInterface'.(ÓòüÈıÿÿÿÿ8ëÿ™üÒ0

@@ -1,0 +1,68 @@
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <netinet/ip.h>
+#include <stdio.h>
+
+int main(){
+
+        unsigned short int PORT = 1234;
+
+        char ADDRESS[256] = "172.30.112.178";
+
+        int QUEUE_SIZE = 12;
+
+        int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
+        if(sockfd == -1){
+                perror("Socket error.\n");
+                return -1;
+        }
+
+        printf("Socket created succesfully.\n");
+
+        struct sockaddr_in server_address;
+
+        server_address.sin_family = AF_INET;
+
+        server_address.sin_port = htons(PORT);
+
+        inet_aton(ADDRESS, &server_address.sin_addr);
+
+        socklen_t server_addr_len = sizeof(server_address);
+
+        int rez = bind(sockfd, (const struct sockaddr*) &server_address, server_addr_len);
+
+	  if(rez == -1){
+                perror("Bind error.\n");
+                return -1;
+        }
+
+        printf("Bind successful on address %s and port %hu.\n", ADDRESS, PORT);
+
+        rez = listen(sockfd, QUEUE_SIZE);
+
+        if(rez == -1){
+                perror("Listen error.\n");
+                return -1;
+        }
+
+        printf("Listen successful.\n");
+
+        struct sockaddr_in client_info;
+
+        socklen_t client_info_len;
+
+        while(1){
+
+                rez = accept(sockfd, (struct sockaddr*) &client_info, &client_info_len);
+                if(rez == -1){
+                        perror("Error at client connection.\n");
+                        continue;
+                }
+                printf("Client connected successfuly with ip %s.\n", inet_ntoa(client_info.sin_addr));
+        }
+
+        return 0;
+}
+

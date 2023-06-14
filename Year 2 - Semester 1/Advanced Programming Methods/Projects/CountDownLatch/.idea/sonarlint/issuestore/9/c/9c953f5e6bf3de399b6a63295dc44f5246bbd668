@@ -1,0 +1,14 @@
+
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(áÚÛ³
+f	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ð¯Ìõ
+k	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£Œ¨ùÿÿÿÿ
+x
+java:S1488L"]Immediately return this expression instead of assigning it to the temporary variable "new_l".(£Œ¨ùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿÃÙŸýÿÿÿÿ
+Y
+java:S1155%">Use isEmpty() to check whether the collection is empty or not.(í‡œŽøÿÿÿÿ
+Y
+java:S1155/">Use isEmpty() to check whether the collection is empty or not.(í‡œŽøÿÿÿÿ
+Y
+java:S11559">Use isEmpty() to check whether the collection is empty or not.(í‡œŽøÿÿÿÿ

@@ -1,0 +1,3 @@
+﻿  client.cpp
+C:\Users\danyb\OneDrive\Desktop\lab3_client\lab3_client\client.cpp(38,81): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  lab3_client.vcxproj -> C:\Users\danyb\OneDrive\Desktop\lab3_client\x64\Debug\lab3_client.exe

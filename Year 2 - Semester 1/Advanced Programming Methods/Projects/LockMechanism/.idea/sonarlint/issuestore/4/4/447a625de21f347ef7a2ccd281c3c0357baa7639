@@ -1,0 +1,11 @@
+
+f	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÞéý
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ðªð%
+l
+java:S3457z"Q%n should be used in place of \n to produce the platform-specific line separator.(¾ˆ„µøÿÿÿÿ
+h
+java:S3457‚"Q%n should be used in place of \n to produce the platform-specific line separator.(»¿°§
+h
+java:S3457Š"Q%n should be used in place of \n to produce the platform-specific line separator.(áÖ¸Ž
+h
+java:S3457’"Q%n should be used in place of \n to produce the platform-specific line separator.(ó£ÿþ

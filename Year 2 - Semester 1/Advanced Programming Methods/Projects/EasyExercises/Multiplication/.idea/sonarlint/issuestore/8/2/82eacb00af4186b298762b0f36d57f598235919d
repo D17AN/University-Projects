@@ -1,0 +1,17 @@
+
+c
+java:S1192¯"GDefine a constant instead of duplicating this literal "Error!" 3 times.(Ô™¹Ğúÿÿÿÿ
+f
+java:S1192°"ODefine a constant instead of duplicating this literal "Error occured!" 3 times.(ÂÛ†¤
+g	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ƒ´Ú
+[
+java:S1155J">Use isEmpty() to check whether the collection is empty or not.(±ĞŸ„8•û‘ıÒ0
+p
+java:S6204ˆ"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¿ƒ´Ú8¹‚“ıÒ0
+z
+java:S2142µ"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(Å¡®ïùÿÿÿÿ
+\
+java:S1155¦">Use isEmpty() to check whether the collection is empty or not.(§éóÄ8½‚“ıÒ0
+\
+java:S1128
+":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿ8•«™ıÒ0

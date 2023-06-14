@@ -1,0 +1,246 @@
+ID: 1
+Execution Stack:
+int v|v = 4|while(v > 0){Print(v)|v = 1 - v}|Print(v)
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+v = 4|while(v > 0){Print(v)|v = 1 - v}|Print(v)
+int v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+v = 4|while(v > 0){Print(v)|v = 1 - v}|Print(v)
+int v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+v = 4|while(v > 0){Print(v)|v = 1 - v}|Print(v)
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+v = 4|while(v > 0){Print(v)|v = 1 - v}|Print(v)
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+while(v > 0){Print(v)|v = 1 - v}|Print(v)
+v = 4
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+while(v > 0){Print(v)|v = 1 - v}|Print(v)
+v = 4
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+while(v > 0){Print(v)|v = 1 - v}|Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+while(v > 0){Print(v)|v = 1 - v}|Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+Print(v)|v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+Print(v)|v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+4
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+4
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+Print(v)
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+Toy Semaphore table:
+
+ID: 1
+Execution Stack:
+SymbolTable:
+v -> -3
+Output list:
+4
+-3
+File table:
+Heap memory:
+Toy Semaphore table:
+

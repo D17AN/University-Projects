@@ -1,0 +1,16 @@
+
+b
+java:S1192+"LDefine a constant instead of duplicating this literal "\u001B[31m" 10 times.(ï—ê∫
+a
+java:S1192+"KDefine a constant instead of duplicating this literal "\u001B[0m" 10 times.(ï—ê∫
+N	java:S106+"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+N	java:S106?"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+N	java:S106T"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+N	java:S106k"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+O	java:S106ë"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+O	java:S106¢"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+O	java:S106µ"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+O	java:S106≈"9Replace this use of System.out or System.err by a logger.(ï—ê∫
+W	java:S125…"<This block of commented-out lines of code should be removed.(æúü¡¯ˇˇˇˇ
+O	java:S106ﬁ"9Replace this use of System.out or System.err by a logger.(ï—ê∫

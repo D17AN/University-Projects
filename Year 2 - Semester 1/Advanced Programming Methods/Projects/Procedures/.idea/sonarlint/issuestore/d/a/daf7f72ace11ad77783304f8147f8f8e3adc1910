@@ -1,0 +1,9 @@
+
+f
+java:S1206"PThis class overrides "equals()" and should therefore also override "hashCode()".(µν…
+h
+java:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(­χό[
+]
+java:S1182"HUse super.clone() to create and seed the cloned instance to be returned.(­χό[
+q
+java:S2159"VRemove this call to "equals"; comparisons between unrelated types always return false.(αϊÿÿÿÿ

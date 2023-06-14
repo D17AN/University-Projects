@@ -1,0 +1,97 @@
+Create a database for women shoes.
+a) The entities of the problem domain are: Shoes, Shoe Models, Presentation Shops and Women.
+b) Each presentation shop has a name and a city.
+c) Each woman has a name and a maximum amount to spend.
+d) Each shoe has a price  and it is part of a shoe model. Each shoe model is characterized by a name and a season. A shoe model contains one or more shoes.
+e) A shoe can be found in one or more presentation shops and in a presentation shop can be one or more shoes, characterized also by the number of available shoes.
+f) A woman will buy one or more shoes and a shoe will be bought by one or more women, knowing also the number of shoes bought and the spent amount.
+
+TO DOs:
+1) Write an SQL Server script that creates the corresponding relational data model.
+2) Create a stored procedure that receives a shoe, a presentation shop and the number of shoes and adds the shoe to the presentation shop
+3) Create a view that shows the women that bought at least 2 shoes from a given shoe model.
+4) Create a function that lists the shoes that can be found in at least T presentation shops, where T>=1 is a functions parameter.
+
+
+--1)
+-- create table for presentation shops
+CREATE TABLE presentation_shops (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    city VARCHAR(255)
+);
+
+-- create table for shoe models
+CREATE TABLE shoe_models (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    season VARCHAR(255)
+);
+
+-- create table for women
+CREATE TABLE women (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    max_spend INT
+);
+
+-- create table for shoes
+CREATE TABLE shoes (
+    id INT PRIMARY KEY,
+    price DECIMAL(18,2),
+    shoe_model_id INT,
+    FOREIGN KEY (shoe_model_id) REFERENCES shoe_models(id)
+);
+
+-- create table to store the association between shoes and presentation shops
+CREATE TABLE presentation_shop_shoe (
+    shoe_id INT,
+    presentation_shop_id INT,
+    available INT,
+    FOREIGN KEY (shoe_id) REFERENCES shoes(id),
+    FOREIGN KEY (presentation_shop_id) REFERENCES presentation_shops(id)
+);
+
+-- create table to store the association between shoes and women
+CREATE TABLE women_shoes (
+    shoe_id INT,
+    woman_id INT,
+    number INT,
+    spent_amount DECIMAL(18,2),
+    FOREIGN KEY (shoe_id) REFERENCES shoes(id),
+    FOREIGN KEY (woman_id) REFERENCES women(id)
+);
+
+--2)
+CREATE PROCEDURE add_shoe_to_shop (
+    @shoe_id INT,
+    @presentation_shop_id INT,
+    @number INT
+)
+AS
+BEGIN
+    INSERT INTO presentation_shop_shoe (shoe_id, presentation_shop_id, available)
+    VALUES (@shoe_id, @presentation_shop_id, @number);
+END;
+GO
+
+--3)
+CREATE VIEW women_by_shoe_model
+AS
+SELECT woman_id, shoe_model_id, COUNT(*) as number_of_shoes
+FROM women_shoes
+JOIN shoes ON women_shoes.shoe_id = shoes.id
+GROUP BY woman_id, shoe_model_id
+HAVING COUNT(*) >= 2;
+
+--4)
+CREATE FUNCTION shoes_in_shops (@min_shops INT)
+RETURNS TABLE 
+AS
+RETURN 
+    SELECT shoes.id as shoe_id, shoe_models.name as model_name, COUNT(DISTINCT presentation_shop_shoe.presentation_shop_id) as number_of_shops
+    FROM shoes
+    JOIN shoe_models ON shoes.shoe_model_id = shoe_models.id
+    JOIN presentation_shop_shoe ON shoes.id = presentation_shop_shoe.shoe_id
+    GROUP BY shoes.id, shoe_models.name
+    HAVING COUNT(DISTINCT presentation_shop_shoe.presentation_shop_id) >= @min_shops

@@ -1,0 +1,7 @@
+
+P
+java:S1191"5Use classes from the Java API instead of Sun classes.(ñ»ò—þÿÿÿÿ
+i
+java:S2975$"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(µõßÒ
+^
+java:S1182$"HUse super.clone() to create and seed the cloned instance to be returned.(µõßÒ

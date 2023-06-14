@@ -1,0 +1,5 @@
+
+k
+java:S1201"UEither override Object.equals(Object), or rename the method to prevent any confusion.(ß£ëà
+i
+java:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(≈‡÷ï

@@ -1,0 +1,7 @@
+
+p
+java:S1201"UEither override Object.equals(Object), or rename the method to prevent any confusion.(וÞüחתÿÿÿÿ
+n
+java:S2975"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ֲüנח‏ÿÿÿÿ
+c
+java:S1182"HUse super.clone() to create and seed the cloned instance to be returned.(ֲüנח‏ÿÿÿÿ

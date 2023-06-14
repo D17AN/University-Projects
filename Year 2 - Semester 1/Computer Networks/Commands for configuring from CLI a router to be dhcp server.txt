@@ -1,0 +1,9 @@
+router, cli, enable, ctrl + z = to enter configure mode
+configure t
+ip dhcp pool ${name}, where ${name} = x
+network ${ip_address} ${netmask}, where ${ip_address} = the network address and ${netmask} = the netmask of the network
+default-router ${router_ip}, where ${router_ip} = ip of the router
+dns-server ${dns_server_ip}, where ${dns_server_ip} = ip of the dns server
+ctrl + z
+write memory
+

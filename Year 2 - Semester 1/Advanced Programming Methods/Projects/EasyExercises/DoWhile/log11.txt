@@ -1,0 +1,244 @@
+ID: 1
+Execution Stack:
+int v|v = 4|do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 4|do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+int v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 4|do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+int v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 4|do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 4|do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+v = 4
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+v = 4
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+do {Print(v)|v = 1 - v} while (v > 0)|Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+do {Print(v)|v = 1 - v} while (v > 0)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+do {Print(v)|v = 1 - v} while (v > 0)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+Print(v)|v = 1 - v|while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+Print(v)|v = 1 - v|while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+Print(v)|v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+Print(v)|v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+Print(v)
+SymbolTable:
+v -> 4
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+v = 1 - v
+SymbolTable:
+v -> 4
+Output list:
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+while(v > 0){Print(v)|v = 1 - v}
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(v)
+SymbolTable:
+v -> -3
+Output list:
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+SymbolTable:
+v -> -3
+Output list:
+4
+-3
+File table:
+Heap memory:
+

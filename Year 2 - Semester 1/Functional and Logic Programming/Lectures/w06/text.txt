@@ -1,0 +1,7 @@
+
+combSum([3, 2, 7, 5, 1, 6], 3, 9, C). 
+
+
+permutations(4,2,V).
+
+solution([1,2,3,4,5,6],6,V).

@@ -1,0 +1,429 @@
+ID: 1
+Execution Stack:
+int a|int b|int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+int a
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+int a
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+int b
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+int b
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int c|a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+int c
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+int c
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 0
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 1|b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 0
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+a = 1
+SymbolTable:
+a -> 0
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+a = 1
+SymbolTable:
+a -> 0
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 1
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 2|c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 1
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+b = 2
+SymbolTable:
+a -> 1
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+b = 2
+SymbolTable:
+a -> 1
+b -> 0
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+c = 5|switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+c = 5
+SymbolTable:
+a -> 1
+b -> 2
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+c = 5
+SymbolTable:
+a -> 1
+b -> 2
+c -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}|Print(300)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+switch(10 * a){(case(c * b): Print(a)|Print(b))(case(10): Print(100)|Print(200))(default: Print(300))}
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+if(10 * a == c * b){Print(a)|Print(b)}else{if(10 * a == 10){Print(100)|Print(200)}else{Print(300)}}
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+if(10 * a == c * b){Print(a)|Print(b)}else{if(10 * a == 10){Print(100)|Print(200)}else{Print(300)}}
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+Print(a)|Print(b)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+Print(a)|Print(b)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+Print(b)
+Print(a)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+Print(b)
+Print(a)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+Print(b)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+1
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+Print(b)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+1
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+1
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(300)
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+1
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+SymbolTable:
+a -> 1
+b -> 2
+c -> 5
+Output list:
+1
+2
+300
+File table:
+Heap memory:
+

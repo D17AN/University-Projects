@@ -1,0 +1,185 @@
+ID: 1
+Execution Stack:
+Reference(int) v|New(v,20)|Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+New(v,20)|Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+Reference(int) v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+New(v,20)|Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+Reference(int) v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+New(v,20)|Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (0, int)
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+New(v,20)|Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (0, int)
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+New(v,20)
+SymbolTable:
+v -> (0, int)
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+New(v,20)
+SymbolTable:
+v -> (0, int)
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+Print(ReadHeap(v))|WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+Print(ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+Print(ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+WriteHeap(v, 30)|Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+Print(5 + ReadHeap(v))
+WriteHeap(v, 30)
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+Print(5 + ReadHeap(v))
+WriteHeap(v, 30)
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+File table:
+Heap memory:
+1 -> 20
+
+ID: 1
+Execution Stack:
+Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+File table:
+Heap memory:
+1 -> 30
+
+ID: 1
+Execution Stack:
+Print(5 + ReadHeap(v))
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+File table:
+Heap memory:
+1 -> 30
+
+ID: 1
+Execution Stack:
+SymbolTable:
+v -> (1, int)
+Output list:
+20
+35
+File table:
+Heap memory:
+1 -> 30
+

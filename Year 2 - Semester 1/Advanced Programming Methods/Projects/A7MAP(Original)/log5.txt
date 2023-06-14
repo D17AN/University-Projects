@@ -1,0 +1,198 @@
+ID: 1
+Execution Stack:
+int a|int b|a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+int a
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+int a
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+int b|a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+int b
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+int b
+SymbolTable:
+a -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+a = 5|b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 7|if(a > b){Print(a)}else{Print(b)}
+a = 5
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 7|if(a > b){Print(a)}else{Print(b)}
+a = 5
+SymbolTable:
+a -> 0
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 5
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+b = 7|if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 5
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+if(a > b){Print(a)}else{Print(b)}
+b = 7
+SymbolTable:
+a -> 5
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+if(a > b){Print(a)}else{Print(b)}
+b = 7
+SymbolTable:
+a -> 5
+b -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 5
+b -> 7
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+if(a > b){Print(a)}else{Print(b)}
+SymbolTable:
+a -> 5
+b -> 7
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(b)
+SymbolTable:
+a -> 5
+b -> 7
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(b)
+SymbolTable:
+a -> 5
+b -> 7
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+SymbolTable:
+a -> 5
+b -> 7
+Output list:
+7
+File table:
+Heap memory:
+

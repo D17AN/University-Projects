@@ -1,0 +1,96 @@
+Create a database to manage the activity of a confectionery store.
+The entities of interest to the problem domain are: Cakes, Cake Types, Orders and Confectionery Chefs .
+Each chef has a name, gender and a date of birth.
+Each cake has a name, shape, weight, price, and belongs to a type.
+Each cake type has a name, a description, and can correspond to several cakes.
+A chef can specialize in the preparation of several cakes.
+An order can include several cakes and has a date; a cake can be included in several orders; for every cake purchased on an order, the system stores the number of ordered pieces, e.g:<order 1: 3 Diplomat Cakes and 2 Cheesecakes>, <order 2: 3 Cheesecakes>.
+
+1. Write an SQL Server script that creates the corresponding relational data model.
+2. Implement a stored procedure that receives an order ID, a cake name, and a positive number P representing the number of ordered pieces, and add the cake to the order. If the cake is already on the order, the number of ordered pieces is set to P.
+3. Implement a function that lists the names of the chefs who are specialized in the preparation of all the cakes.
+
+--1
+-- Create table for chefs
+CREATE TABLE ConfectioneryChefs (
+  ChefID INT PRIMARY KEY,
+  Name NVARCHAR(50) NOT NULL,
+  Gender CHAR(1) NOT NULL,
+  Birthdate DATE NOT NULL
+);
+
+-- Create table for cake types
+CREATE TABLE CakeTypes (
+  TypeID INT PRIMARY KEY,
+  TypeName NVARCHAR(50) NOT NULL,
+  Description NVARCHAR(255)
+);
+
+-- Create table for cakes
+CREATE TABLE Cakes (
+  CakeID INT PRIMARY KEY,
+  CakeName NVARCHAR(50) NOT NULL,
+  Shape NVARCHAR(50) NOT NULL,
+  Weight FLOAT NOT NULL,
+  Price FLOAT NOT NULL,
+  TypeID INT NOT NULL,
+  FOREIGN KEY (TypeID) REFERENCES CakeTypes(TypeID)
+);
+
+-- Create table for orders
+CREATE TABLE Orders (
+  OrderID INT PRIMARY KEY,
+  OrderDate DATE NOT NULL
+);
+
+-- Create table for ordered cakes
+CREATE TABLE OrderedCakes (
+  OrderID INT NOT NULL,
+  CakeID INT NOT NULL,
+  Pieces INT NOT NULL,
+  PRIMARY KEY (OrderID, CakeID),
+  FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+  FOREIGN KEY (CakeID) REFERENCES Cakes(CakeID)
+);
+
+-- Create table for chef specialties
+CREATE TABLE ChefSpecialties (
+  ChefID INT NOT NULL,
+  CakeID INT NOT NULL,
+  PRIMARY KEY (ChefID, CakeID),
+  FOREIGN KEY (ChefID) REFERENCES ConfectioneryChefs(ChefID),
+  FOREIGN KEY (CakeID) REFERENCES Cakes(CakeID)
+);
+
+--2
+CREATE PROCEDURE AddCakeToOrder
+  @OrderID INT,
+  @CakeName NVARCHAR(50),
+  @Pieces INT
+AS
+BEGIN
+  DECLARE @CakeID INT
+  SET @CakeID = (SELECT CakeID FROM Cakes WHERE CakeName = @CakeName)
+
+  IF (EXISTS (SELECT 1 FROM OrderedCakes WHERE OrderID = @OrderID AND CakeID = @CakeID))
+  BEGIN
+    UPDATE OrderedCakes
+    SET Pieces = @Pieces
+    WHERE OrderID = @OrderID AND CakeID = @CakeID
+  END
+  ELSE
+  BEGIN
+    INSERT INTO OrderedCakes (OrderID, CakeID, Pieces)
+    VALUES (@OrderID, @CakeID, @Pieces)
+  END
+END
+
+--3
+CREATE FUNCTION GetSpecializedChefs()
+RETURNS TABLE
+AS
+RETURN (
+  SELECT DISTINCT Name
+  FROM ConfectioneryChefs c
+  WHERE NOT EXISTS (SELECT 1 FROM Cakes WHERE CakeID NOT IN (SELECT CakeID FROM ChefSpecialties WHERE ChefID = c.ChefID))
+);

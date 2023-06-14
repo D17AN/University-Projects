@@ -1,0 +1,135 @@
+Create a database for a system that manages flights. The entities of interest to the problem domain are: 
+Airplanes, Flights, Passengers, Reservations and Payments. Each airplane has a model
+number, a registration number, and the capacity representing the number of passengers it can take. 
+Registration numbers are unique. Each airplane flight has a flight number, a departure airport, 
+a destination airport, a departure date and time, and an arrival date and time. Flight numbers are unique. 
+Each flight is carried out by a single airplane. Each passenger has a first name,
+last name, and an email address. Email addresses are unique. 
+A passenger can book any number of flights, while a flight can be booked by any number of passengers. 
+For each reservation
+the system must store the passenger, the flight and payment details. Each payment has an amount, date 
+and time of the payment and type(card or cash). A reservation can have only one payment
+attached.
+
+1. Write an SQL Server script that creates the corresponding relational data model.
+2. Implement a stored procedure that receives and adds the payment and field(s) that identify an existing reservation and 
+adds the payment to the corresponding reservation. If a payment for the reservation already exits, the system will display 
+an error message and it will not update the reservation in the database.
+3. Create a view that show the names of the passengers that have at least one reservation for the flights that depart 
+from Madrid airport
+4. Implement a function that lists the flights with more than X valid reservation 
+(a reservation is valid if there is a payment associated to it) during a period of time, where the period
+of time(start time, end time) and X are function parameters.
+
+-- 1
+-- Create Airplanes table
+CREATE TABLE Airplanes (
+    ID INT PRIMARY KEY IDENTITY(1, 1),
+    ModelNumber NVARCHAR(255) NOT NULL,
+    RegistrationNumber NVARCHAR(255) UNIQUE NOT NULL,
+    Capacity INT NOT NULL
+);
+
+-- Create Flights table
+CREATE TABLE Flights (
+    ID INT PRIMARY KEY IDENTITY(1, 1),
+    FlightNumber NVARCHAR(255) UNIQUE NOT NULL,
+    DepartureAirport NVARCHAR(255) NOT NULL,
+    DestinationAirport NVARCHAR(255) NOT NULL,
+    DepartureDateTime DATETIME NOT NULL,
+    ArrivalDateTime DATETIME NOT NULL,
+    AirplaneID INT NOT NULL,
+    FOREIGN KEY (AirplaneID) REFERENCES Airplanes(ID)
+);
+
+-- Create Passengers table
+CREATE TABLE Passengers (
+    ID INT PRIMARY KEY IDENTITY(1, 1),
+    FirstName NVARCHAR(255) NOT NULL,
+    LastName NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(255) UNIQUE NOT NULL
+);
+
+-- Create Payments table
+CREATE TABLE Payments (
+    ID INT PRIMARY KEY IDENTITY(1, 1),
+    Amount DECIMAL(18, 2) NOT NULL,
+    PaymentDateTime DATETIME NOT NULL,
+    PaymentType NVARCHAR(255) NOT NULL
+);
+
+-- Create Reservations table
+CREATE TABLE Reservations (
+    ID INT PRIMARY KEY IDENTITY(1, 1),
+    FlightID INT NOT NULL,
+    PassengerID INT NOT NULL,
+    PaymentID INT,
+    FOREIGN KEY (FlightID) REFERENCES Flights(ID),
+    FOREIGN KEY (PassengerID) REFERENCES Passengers(ID),
+    FOREIGN KEY (PaymentID) REFERENCES Payments(ID)
+);
+
+
+INSERT INTO Airplanes (ModelNumber, RegistrationNumber, Capacity) VALUES ('A320', 'N123AA', 150);
+INSERT INTO Airplanes (ModelNumber, RegistrationNumber, Capacity) VALUES ('B787', 'N456BB', 250);
+
+INSERT INTO Flights (FlightNumber, DepartureAirport, DestinationAirport, DepartureDateTime, ArrivalDateTime, AirplaneID) 
+VALUES ('AA100', 'New York', 'London', '2022-01-01 10:00:00', '2022-01-01 15:00:00', 1);
+INSERT INTO Flights (FlightNumber, DepartureAirport, DestinationAirport, DepartureDateTime, ArrivalDateTime, AirplaneID) 
+VALUES ('AA200', 'London', 'Paris', '2022-01-02 12:00:00', '2022-01-02 14:00:00', 1);
+
+INSERT INTO Passengers (FirstName, LastName, Email) VALUES ('John', 'Doe', 'johndoe@example.com');
+INSERT INTO Passengers (FirstName, LastName, Email) VALUES ('Jane', 'Doe', 'janedoe@example.com');
+
+INSERT INTO Reservations (FlightID, PassengerID) VALUES (1, 1);
+INSERT INTO Reservations (FlightID, PassengerID) VALUES (2, 1);
+INSERT INTO Reservations (FlightID, PassengerID) VALUES (2, 2);
+
+INSERT INTO Payments (Amount, PaymentDateTime, PaymentType) VALUES (300, '2022-01-01 12:00:00', 'Visa');
+INSERT INTO Payments (Amount, PaymentDateTime, PaymentType) VALUES (200, '2022-01-02 10:00:00', 'Mastercard');
+
+--2
+CREATE PROCEDURE AddPaymentToReservation (@ReservationID INT, @PaymentAmount DECIMAL(18, 2), @PaymentDateTime DATETIME, @PaymentType NVARCHAR(255))
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Reservations WHERE ID = @ReservationID AND PaymentID IS NOT NULL)
+    BEGIN
+        INSERT INTO Payments (Amount, PaymentDateTime, PaymentType) VALUES (@PaymentAmount, @PaymentDateTime, @PaymentType);
+
+        DECLARE @PaymentID INT = SCOPE_IDENTITY();
+
+        UPDATE Reservations SET PaymentID = @PaymentID WHERE ID = @ReservationID;
+    END
+    ELSE
+    BEGIN
+        PRINT 'A payment for this reservation already exists'
+    END
+END
+
+--3
+CREATE VIEW PassengersWithReservationsFromMadrid AS
+SELECT p.FirstName, p.LastName
+FROM Passengers p
+JOIN Reservations r ON p.ID = r.PassengerID
+JOIN Flights f ON r.FlightID = f.ID
+WHERE f.DepartureAirport = 'Madrid'
+GROUP BY p.FirstName, p.LastName
+
+SELECT * FROM PassengersWithReservationsFromMadrid;
+
+--4
+CREATE FUNCTION GetFlightsWithValidReservations (@StartDate DATETIME, @EndDate DATETIME, @MinValidReservations INT)
+RETURNS TABLE 
+AS
+RETURN 
+    SELECT f.ID, f.FlightNumber
+    FROM Flights f
+    JOIN Reservations r ON f.ID = r.FlightID
+    JOIN Payments p ON r.PaymentID = p.ID
+    WHERE f.DepartureDateTime >= @StartDate AND f.DepartureDateTime <= @EndDate
+    GROUP BY f.ID, f.FlightNumber
+    HAVING COUNT(r.ID) > @MinValidReservations
+
+
+
+

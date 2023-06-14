@@ -1,0 +1,1069 @@
+ID: 1
+Execution Stack:
+int v|v = 20|wait(10)|Print(10 * v)
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 20|wait(10)|Print(10 * v)
+int v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 20|wait(10)|Print(10 * v)
+int v
+SymbolTable:
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 20|wait(10)|Print(10 * v)
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+v = 20|wait(10)|Print(10 * v)
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+wait(10)|Print(10 * v)
+v = 20
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+wait(10)|Print(10 * v)
+v = 20
+SymbolTable:
+v -> 0
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+wait(10)|Print(10 * v)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+wait(10)|Print(10 * v)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(10)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(10)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(10)|wait(9)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(10)|wait(9)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(9)
+Print(10)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(9)
+Print(10)
+SymbolTable:
+v -> 20
+Output list:
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(9)
+SymbolTable:
+v -> 20
+Output list:
+10
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(9)
+SymbolTable:
+v -> 20
+Output list:
+10
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(9)|wait(8)
+SymbolTable:
+v -> 20
+Output list:
+10
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(9)|wait(8)
+SymbolTable:
+v -> 20
+Output list:
+10
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(8)
+Print(9)
+SymbolTable:
+v -> 20
+Output list:
+10
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(8)
+Print(9)
+SymbolTable:
+v -> 20
+Output list:
+10
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(8)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(8)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(8)|wait(7)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(8)|wait(7)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(7)
+Print(8)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(7)
+Print(8)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(7)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(7)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(7)|wait(6)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(7)|wait(6)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(6)
+Print(7)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(6)
+Print(7)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(6)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(6)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(6)|wait(5)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(6)|wait(5)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(5)
+Print(6)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(5)
+Print(6)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(5)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(5)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(5)|wait(4)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(5)|wait(4)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(4)
+Print(5)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(4)
+Print(5)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(4)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(4)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(4)|wait(3)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(4)|wait(3)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(3)
+Print(4)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(3)
+Print(4)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(3)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(3)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(3)|wait(2)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(3)|wait(2)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(2)
+Print(3)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(2)
+Print(3)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(2)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(2)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(2)|wait(1)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(2)|wait(1)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(1)
+Print(2)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(1)
+Print(2)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(1)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(1)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(1)|wait(0)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+Print(1)|wait(0)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(0)
+Print(1)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(0)
+Print(1)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(0)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+wait(0)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+Print(10 * v)
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+File table:
+Heap memory:
+
+ID: 1
+Execution Stack:
+SymbolTable:
+v -> 20
+Output list:
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+200
+File table:
+Heap memory:
+

@@ -1,0 +1,12 @@
+
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÂÏ©Œúÿÿÿÿ
+v
+java:S1488"[Immediately return this expression instead of assigning it to the temporary variable "val".(Öœ¯„úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôêî©úÿÿÿÿ
+h
+java:S29753"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ýªâ
+]
+java:S11823"HUse super.clone() to create and seed the cloned instance to be returned.(ýªâ
+Y
+java:S1128"CRemove this unused import 'exceptions.NonExistentElementException'.(Ä¡ý‚

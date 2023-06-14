@@ -1,0 +1,13 @@
+
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(úö«Ú
+=
+java:S1659""Declare "val2" on a separate line.(øšæşıÿÿÿÿ
+6
+java:S1659"" Declare "n2" on a separate line.(òÿ³Û
+n
+java:S29759"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(×õ·›ÿÿÿÿÿ
+c
+java:S11829"HUse super.clone() to create and seed the cloned instance to be returned.(×õ·›ÿÿÿÿÿ
+;
+java:S1659?" Declare "t2" on a separate line.(†Ôğüÿÿÿÿ

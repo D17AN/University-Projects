@@ -1,0 +1,83 @@
+Design a database that manages 'Cinema Productions'. The entities of interest for the problem domain are: Actors, Movies, Companies, Cinema Productions and Stage Directors.
+Each 'Movie' has a name, a release date, belgons to a production 'Company' and has a stage director. The 'Company' has a name and an ID. A stage director can direct
+multiple movies, has a name and a number of awards. Each 'Cinema Production' has a title, an associated movie and a list of actors with an entry moment for each actor. 
+Every actor has a name and a ranking.
+
+1) Write an SQL Server script that creates the corresponding relational data model.
+2) Create a stored procedure that receives an actor, an entry moment and a cinema production and adds the new actor to the cinema production.
+3) Create a view that shows the name of the actors that appear in all cinema productions.
+4) Create a function that returns all the movies that have the release date after '2018-01-01' and have at least p productions, where p is a function parameter
+
+--1)
+CREATE TABLE Actors (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Ranking INT NOT NULL
+);
+
+CREATE TABLE Movies (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    ReleaseDate DATE NOT NULL,
+    CompanyID INT NOT NULL,
+    DirectorID INT NOT NULL,
+    FOREIGN KEY (CompanyID) REFERENCES Companies(ID),
+    FOREIGN KEY (DirectorID) REFERENCES Directors(ID)
+);
+
+CREATE TABLE Companies (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Directors (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Awards INT NOT NULL
+);
+
+CREATE TABLE CinemaProductions (
+    ID INT PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL,
+    MovieID INT NOT NULL,
+    FOREIGN KEY (MovieID) REFERENCES Movies(ID)
+);
+
+CREATE TABLE ProductionActors (
+    ID INT PRIMARY KEY,
+    CinemaProductionID INT NOT NULL,
+    ActorID INT NOT NULL,
+    EntryMoment DATE NOT NULL,
+    FOREIGN KEY (CinemaProductionID) REFERENCES CinemaProductions(ID),
+    FOREIGN KEY (ActorID) REFERENCES Actors(ID)
+);
+
+--2)
+CREATE PROCEDURE AddActorToProduction (@actorID INT, @entryMoment DATE, @productionID INT)
+AS
+BEGIN
+    INSERT INTO ProductionActors (CinemaProductionID, ActorID, EntryMoment)
+    VALUES (@productionID, @actorID, @entryMoment);
+END;
+
+--3)
+CREATE VIEW AllProductionActors AS
+SELECT A.Name
+FROM Actors A
+JOIN ProductionActors PA
+ON A.ID = PA.ActorID
+GROUP BY A.Name
+HAVING COUNT(DISTINCT PA.CinemaProductionID) = (SELECT COUNT(*) FROM CinemaProductions);
+
+--4)
+CREATE FUNCTION GetRecentMoviesWithMinimumProductions (@minProductions INT)
+RETURNS TABLE
+AS
+RETURN
+    SELECT M.Name, M.ReleaseDate
+    FROM Movies M
+    JOIN CinemaProductions CP
+    ON M.ID = CP.MovieID
+    WHERE M.ReleaseDate > '2018-01-01'
+    GROUP BY M.Name, M.ReleaseDate
+    HAVING COUNT(CP.ID) >= @minProductions;

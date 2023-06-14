@@ -1,0 +1,10 @@
+enable, configure t, router rip
+version 2
+no auto-summary
+network ${Network1_ip}
+network ${Network2_ip}
+
+
+for static
+network where i want to get
+next hop through what you get there

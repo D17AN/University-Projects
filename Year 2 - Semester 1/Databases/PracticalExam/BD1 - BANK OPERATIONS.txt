@@ -1,0 +1,82 @@
+/*
+Create database for tracking operations within a bank.
+You will manage customers, bank accounts, cards, ATMs and transactions.
+Each customer has a name, the date of birth and may have multiple bank accounts.
+For each bank account consider the following: the IBAN code, the current balance, the holder and the cards associated with that bank account.
+Each card has a number, a CVV code (last 3 digits of the card number) and is associated with a bank account. An ATM has an address.
+A transaction involves withdrawing, from an ATM, a sum of money using a card at a certain time (consider both date and time).
+Of course, a card can be used in several transactions at the same ATM or at different ATMs and at an ATM multiple transactions can be done with multiple cards.
+
+Requierements:
+1. Write an SQL Server script that creates the corresponding relational data model.
+2. Implement a stored procedure that receives a card and deletes all the transactions related to that card.
+3. Create a view that shows the card numbers which were used in transactions at all the ATMs.
+4. Implement a functions that lists the cards (number and CVV code) that have the total transactions sum greater than 2000 lei.
+*/
+
+--1)
+-- Creating Customers table
+CREATE TABLE Customers (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    name VARCHAR(255) NOT NULL,
+    date_of_birth DATE NOT NULL
+);
+
+-- Creating Bank Accounts table
+CREATE TABLE BankAccounts (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    iban VARCHAR(255) UNIQUE NOT NULL,
+    balance DECIMAL(18, 2) NOT NULL,
+    customer_id INT NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES Customers(id)
+);
+
+-- Creating Cards table
+CREATE TABLE Cards (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    number VARCHAR(255) UNIQUE NOT NULL,
+    cvv VARCHAR(3) NOT NULL,
+    account_id INT NOT NULL,
+    FOREIGN KEY (account_id) REFERENCES BankAccounts(id)
+);
+
+-- Creating ATMs table
+CREATE TABLE ATMs (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    address VARCHAR(255) NOT NULL
+);
+
+-- Creating Transactions table
+CREATE TABLE Transactions (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    card_id INT NOT NULL,
+    atm_id INT NOT NULL,
+    amount DECIMAL(18, 2) NOT NULL,
+    date_time DATETIME NOT NULL,
+    FOREIGN KEY (card_id) REFERENCES Cards(id),
+    FOREIGN KEY (atm_id) REFERENCES ATMs(id)
+);
+
+--2)
+CREATE PROCEDURE delete_transactions_by_card(@card_number VARCHAR(255))
+AS
+BEGIN
+    DELETE FROM Transactions
+    WHERE card_id = (SELECT id FROM Cards WHERE number = @card_number)
+END;
+
+--3)
+CREATE VIEW used_cards_at_all_atms AS
+    SELECT DISTINCT number FROM Cards
+    JOIN Transactions ON Cards.id = Transactions.card_id;
+
+--4)
+CREATE FUNCTION get_cards_with_transactions_over_amount(@threshold FLOAT)
+RETURNS TABLE 
+AS
+RETURN
+    SELECT number, cvv
+    FROM Cards
+    WHERE (SELECT SUM(amount) FROM Transactions WHERE card_id = Cards.id) > @threshold;
+
+SELECT * FROM dbo.get_cards_with_transactions_over_amount(2000)

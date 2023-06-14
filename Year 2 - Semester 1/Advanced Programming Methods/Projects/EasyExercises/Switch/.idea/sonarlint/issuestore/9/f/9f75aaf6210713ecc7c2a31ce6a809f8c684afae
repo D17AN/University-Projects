@@ -1,0 +1,11 @@
+
+=
+java:S1659""Declare "val2" on a separate line.(øšæþýÿÿÿÿ
+;
+java:S1659#" Declare "b2" on a separate line.(Ú—˜Âÿÿÿÿÿ
+n
+java:S29756"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(×õ·›ÿÿÿÿÿ
+c
+java:S11826"HUse super.clone() to create and seed the cloned instance to be returned.(×õ·›ÿÿÿÿÿ
+;
+java:S1659<" Declare "t2" on a separate line.(†Ôðüÿÿÿÿ
