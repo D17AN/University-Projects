@@ -1,0 +1,32 @@
+<!-- 23. Write a web page which contains a div with a blue background color located 
+    on the top left corner of the page. When the mouse is over it the div should move 
+    to the bottom right corner of the page. The div should not jump directly to 
+    the bottom right corner. During this transition, the background color of the div 
+    should transition from blue to full red. -->
+
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Div Moving</title>
+    <style>
+      .mydiv {
+        background-color: blue;
+        width: 10vw;
+        height: 10vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 5s ease;
+        transition-property: background-color, transform;
+      }
+
+      .mydiv:hover {
+        background-color: red;
+        transform: translate(90vw, 90vh);
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "mydiv"></div>
+  </body>
+</html>

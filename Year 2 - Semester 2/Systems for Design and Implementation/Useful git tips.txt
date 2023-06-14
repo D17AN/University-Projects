@@ -1,0 +1,12 @@
+How to:
+
+Each local repository(cloned from gihub) has a reference to the remote github repository from where it has been cloned. 
+origin - points to the original remote repository you cloned from
+When using `git clone` or `git pull` it is assumed that's from the origin
+
+
+1. clone: git clone <repository link>
+
+2. pull the last version of the git repository from github: git pull
+
+3. push version: git push <remote> <branchname> (e.g. git push origin main - pushes the changes to the original remote github repository the repository was cloned from to branch main)

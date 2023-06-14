@@ -1,0 +1,11 @@
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\bin\Debug\Lab2.exe.config
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\bin\Debug\Lab2.exe
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\bin\Debug\Lab2.pdb
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.csproj.AssemblyReference.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.csproj.SuggestedBindingRedirects.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.Form1.resources
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.Properties.Resources.resources
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.csproj.GenerateResource.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.exe
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Labs\Lab2\Lab2\obj\Debug\Lab2.pdb

@@ -1,0 +1,19 @@
+How to:
+
+
+
+1. Run the application on port 80 : sudo /home/ubuntu/anaconda3/bin/python manage.py runserver 0.0.0.0:80
+
+2. How to connect to EC2 with Putty : https://www.youtube.com/watch?v=bi7ow5NGC-U
+
+3. How to clone Github repository using Personal Access Token : https://www.youtube.com/watch?v=C-jOtle5BmE
+
+4. How to clone server: git clone http://<personal access token>:x-oauth-basic@github.com/'name of repository'
+
+5. Install packages from a text file : pip install -r requierements.txt
+
+6. How to create requierements file: pip freeze > requierements.txt
+
+7. See running ports:  netstat -ntlp
+
+8. Kill process running on port 80: sudo fuser -k 80/tcp

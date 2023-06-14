@@ -1,0 +1,178 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --cell-size: 120px;
+    --mark-size: calc(var(--cell-size) * 0.8);
+    --backgroud-color: darkcyan;
+}
+body{
+    margin:0 ;
+    background-color: var(--backgroud-color);
+}
+
+
+/* Board style */
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+}
+
+/* Cell style */
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: transparent;
+    border: 3px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Remove outer lines of the board/cells */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.cell:first-child,
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+
+
+
+.cell.x::before,
+.cell.x::after{
+    background-color: darkblue;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    background-color: rgba(211, 211, 211);
+}
+
+/*X shape*/
+.cell.x::before, 
+.cell.x::after,
+/*if we are on the x cell of the bord and we hover over it and is not marked*/
+.board.x .cell:not(.x):not(.circle):hover::before, 
+.board.x .cell:not(.x):not(.circle):hover::after{
+    content: '';
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+    position: absolute;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    transform: rotate(-45deg);
+}
+
+/* O shape */
+.cell.circle::before,
+.cell.circle::after{
+    background-color: darkred;
+}
+
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    background-color: lightgrey;
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    content: '';
+    position: absolute;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    border-radius: 50%;
+}
+
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    width: calc(var(--mark-size));
+    height: calc(var(--mark-size));
+
+}
+
+.cell.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    width: calc(var(--mark-size) * 0.8);
+    height: calc(var(--mark-size) * 0.8);
+    background-color: var(--backgroud-color);
+}
+
+
+/*not allowed pointer activate when we try to hover on a marked cell*/
+.cell.x, .cell.circle{
+    cursor: not-allowed;
+}
+
+/*winning message */
+.winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-weight: 200;
+    font-size: 5rem;
+}
+
+
+.winning-message button{
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    font-size: 3rem;
+    font-weight: 400;
+    background-color: lightgray;
+    border-radius: 10%;
+}
+
+.winning-message button:hover{
+    text-decoration:underline;
+    color: white;
+    background-color: rgba(0, 149, 255, 0.892);
+}
+
+.winning-message.show{
+    display: flex;
+}

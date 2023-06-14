@@ -1,0 +1,11 @@
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\bin\Debug\SolutionPractic2023-923.exe.config
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\bin\Debug\SolutionPractic2023-923.exe
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\bin\Debug\SolutionPractic2023-923.pdb
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023-923.csproj.AssemblyReference.cache
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023-923.csproj.SuggestedBindingRedirects.cache
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023_923.Form1.resources
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023_923.Properties.Resources.resources
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023-923.csproj.GenerateResource.cache
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023-923.csproj.CoreCompileInputs.cache
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023-923.exe
+C:\Users\danyb\OneDrive\Desktop\Examen DB\Practic\New folder\SolutionPractic2023-923\obj\Debug\SolutionPractic2023-923.pdb

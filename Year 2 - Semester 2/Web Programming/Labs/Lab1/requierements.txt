@@ -1,0 +1,22 @@
+<img>, checked
+<a>, checked
+<table>, checked
+<br>, checked
+<hr>, checked
+<p>, checked
+<b>, checked
+<div>, checked
+<ul>, checked
+<li>, checked
+<section>,checked
+<article>, checked
+<footer>, checked
+<header>, checked
+<aside>, checked
+<nav>, checked
+<svg>, checked
+<audio>, checked
+<video>, checked
+<figure>, checked
+<figurecaption>, checked 
+<main>, checked

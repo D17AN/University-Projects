@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Dialog Example</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(function() {
+      // Initialize the dialog
+      $("#my-dialog").dialog({
+        autoOpen: false,
+        draggable: true,
+        resizable: false,
+        closeOnEscape: true,
+        modal: true
+      });
+
+      // Show the dialog when the button is clicked
+      $("#my-button").on("click", displayDialog => {
+        $("#my-dialog").dialog("open");
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="my-button">Open Dialog</button>
+
+  <div id="my-dialog" title="Dialog Title">
+      <img src = "img.jpg">
+      <p>Some information.</p>
+      <p>Another paragraph of information.</p>  
+  </div>
+</body>
+</html>

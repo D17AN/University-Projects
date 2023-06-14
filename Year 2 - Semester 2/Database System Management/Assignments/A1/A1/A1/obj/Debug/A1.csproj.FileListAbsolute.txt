@@ -1,0 +1,11 @@
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\bin\Debug\A1.exe.config
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\bin\Debug\A1.exe
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\bin\Debug\A1.pdb
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.csproj.AssemblyReference.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.csproj.SuggestedBindingRedirects.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.Form1.resources
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.Properties.Resources.resources
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.csproj.GenerateResource.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.csproj.CoreCompileInputs.cache
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.exe
+C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\Database System Management\Assignments\A1\A1\A1\obj\Debug\A1.pdb

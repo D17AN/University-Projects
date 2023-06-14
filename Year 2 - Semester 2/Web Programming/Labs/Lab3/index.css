@@ -1,0 +1,500 @@
+.flexContainerWrapperHeader {
+   display: flex;
+   flex-direction: row;
+   background-color: transparent;
+   justify-content: center;
+   padding: 25px 15px;
+   
+}
+
+.flexContainerLogoSearchSettings {
+   display: flex;
+   flex-direction: row;
+   background-color: transparent;
+   justify-content: space-between;
+   gap: 80px;
+}
+
+
+.flexContainerLogo {
+   display: flex;
+   background-color: inherit;
+   flex-direction: row;
+   cursor: pointer;
+   height: 32px;
+   width: 235px;
+   align-items: center;
+}
+
+.logoMSNStyle {
+   background-image: url(icons/msn\ logo.png);
+   background-size: 27px 30px;
+   width: 27px;
+   height: 30px;
+}
+
+#msn {
+   display: block;
+   font-weight: bold;
+   font-size: x-large;
+}
+
+#refresh {
+   display: none;
+   font-weight: bold;
+   font-size: x-large;
+}
+
+.flexContainerLogo:hover #msn {
+   display: none;
+
+}
+
+.flexContainerLogo:hover #refresh {
+   display: block;
+   color: blue;
+}
+
+.flexContainerInputBar {
+   display: flex;
+   background-color: inherit;
+   flex-direction: row;
+   align-items: flex-start;
+   width: 800px;
+   height: 61px;
+}
+
+.formSearchBar {
+   display: flex;
+   height: 46px;
+}
+
+.formSearchBar input {
+   flex: 1;
+   border: none;
+   outline: none;
+   height: 46px;
+   width: 630px;
+   border-radius: 10px;
+}
+
+.formSearchBar button {
+   background-color: aliceblue;
+   cursor: pointer;
+   background-image: url(icons/searchButton.PNG);
+   background-size: 69.6px 46px;
+   border: none;
+   width: 69.6px;
+   height: 46px;
+}
+
+.flexContainerSettings {
+   display: flex;
+   flex-direction: row;
+   height: 48px;
+   width: 120px;
+}
+
+.buttonAccount {
+   background-image: url(icons/1.PNG);
+   background-size: 36px 36px;
+   border: transparent;
+   cursor: pointer;
+   width: 36px;
+   height: 36px;
+}
+
+.buttonNotifications {
+   background-image: url(icons/2.PNG);
+   border: transparent;
+   cursor: pointer;
+   background-size: 32px 32px;
+   width: 36px;
+   height: 36px;
+}
+
+.buttonSettings {
+   background-image: url(icons/3.PNG);
+   border: transparent;
+   cursor: pointer;
+   background-size: 32px 32px;
+   width: 36px;
+   height: 36px;
+}
+
+
+.flexContainerButtonsApps {
+   display: flex;
+   flex-direction: row;
+   height: 48.8px;
+   justify-content: center;
+}
+
+.containerButtonOutlook {
+   width: 173.83px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonOutlook {
+   background-image: url(icons/Outlook.com\ icon.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+.containerBookHotels {
+   width: 178.14px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonBookHotels {
+   background-image: url(icons/Book\ Hotels.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+
+}
+
+.containerFacebook {
+   width: 161.4px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonFacebook {
+   background-image: url(icons/Facebook.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+.containerAliExpress {
+   width: 164.99px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonAliExpress {
+   background-image: url(icons/AliExpress.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+.containerSports {
+   width: 142.1px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonSports {
+   background-image: url(icons/Sports.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+.containerOffice {
+   width: 138.91px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonOffice {
+   background-image: url(icons/Office.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+.containerEbay {
+   width: 131.32px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonEbay {
+   background-image: url(icons/eBay.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+.containerOnlineGames {
+   width: 189.48px;
+   height: 47px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
+   border-bottom: 1px solid gray;
+}
+
+.buttonOnlineGames {
+   background-image: url(icons/Online\ Games.png);
+   background-size: 27px 27px;
+   width: 27px;
+   height: 27px;
+   border: none;
+   cursor: pointer;
+}
+
+
+.flexContainterLinks {
+   display: flex;
+   border: none;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   padding-top: 5px;
+   gap: 10px;
+   margin-right: 30px;
+   height: 34px;
+}
+
+
+.flexContainerWeather {
+   display: flex;
+   border: none;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   border-right: 1px solid gray;
+}
+
+.buttonWeather {
+   background-image: url(icons/weather.PNG);
+   background-size: 152.72px 34px;
+   width: 152.72px;
+   height: 34px;
+   border: none;
+   cursor: pointer;
+}
+
+.flexContainterNavigationList {
+   display: flex;
+   border: none;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+}
+
+.flexContainterNavigationList p {
+   cursor: pointer;
+   font-weight: 700;
+   color: grey;
+}
+
+.flexContainterNavigationList p:hover {
+   text-decoration: underline;
+}
+
+.gridContainer {
+   padding-top: 10px;
+   display:flex;
+   justify-content: center;
+   flex-direction: row;
+   gap:20px;
+   padding-right: 30px;
+}
+
+/* Small widgets */
+.smallWidgetContainer {
+   display: flex;
+   flex-direction: row;
+   width: 306px;
+   height: 100px;
+   padding: 10px;
+   border-radius: 5px;
+   background-color: snow;
+}
+
+.smallWidgetContainer img {
+   margin-right: 10px;
+}
+
+.smallWidgetTextContainter {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.smallWidgetTextContainter p {
+   margin: 0;
+   padding: 0;
+}
+
+.smallWidgetContainer p:hover {
+   font-weight: bold;
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.smallWidgetContainerColumnWrapper {
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   border-radius: 5px;
+   gap: 5px;
+}
+
+.smallWidgetContainerBoxWrapper {
+   display: flex;
+   flex-direction: row;
+   padding: 5px;
+   border-radius: 5px;
+   gap: 5px;
+}
+
+.bigWidgetContainer {
+   display: flex;
+   width: 655px;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: snow;
+   margin-left: 10px;
+}
+
+
+.flexContainerColumn1 {
+   display: flex;
+   flex-direction: column;
+   padding: 0px;
+   border-radius: 5px;
+   gap: 5px;
+   width: 650px;
+}
+
+.divYachts{
+   background-image: url(Images/1.png);
+   background-size: 650px 372px;
+   width: 650px;
+   height: 372px;
+}
+
+.divYachts p {
+   color: azure;
+   font-weight: bold;
+   font-size: xx-large;
+   bottom: 0;
+   left: 0;
+   text-align: left;
+   padding-left: 10px;
+   transform: translateY(300%);
+   text-shadow: 2px 2px 4px #000000;
+}
+
+.divYachts p:hover {
+   text-decoration: underline;
+   cursor: pointer
+}
+
+
+.flexContainerColumn2 {
+   display: flex;
+   flex-direction: column;
+   padding: 5px;
+   border-radius: 5px;
+   gap: 5px;
+   margin-top: -10px;
+   width: 306px;
+}
+
+.mediumWidgetContainer{
+   display: flex;
+   height: 256px;
+   width: 315px;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: snow;
+}
+
+.divMarvelSuperHeroImg{
+   background-image: url(Images/marvelSuperhero.png);
+   background-size: 315px 256px;
+   width: 315px;
+   height: 256px;
+}
+
+.divMarvelSuperHeroImg p{
+   color: azure;
+   font-weight: bold;
+   font-size: x-large;
+   bottom: 0;
+   left: 0;
+   text-align: left;
+   padding-left: 10px;
+   transform: translateY(250%);
+   text-shadow: 2px 2px 4px #000000;
+}
+
+.divMarvelSuperHeroImg p:hover {
+   text-decoration: underline;
+   cursor: pointer
+}
+
+.open-button {
+   background: lightgray;
+   color: solid black;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   position: fixed;
+   bottom: 0px;
+   right: 28px;
+   width: 100.19px;
+   height: 32px;
+ }
