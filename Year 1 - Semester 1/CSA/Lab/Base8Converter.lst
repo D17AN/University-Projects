@@ -1,0 +1,40 @@
+     1                                  bits 32
+     2                                  
+     3                                  global base_8_and_ascii_code
+     4                                  extern printf
+     5                                  import printf msvcrt.dll
+     6                                  
+     7                                  
+     8                                  ;convert_base_8(int value)
+     9                                  ; Calculates and returns the represatation in base 8 of the value
+    10                                  ; parameters:
+    11                                  ;   - value : the value which must be displayed in base 8 and as a character
+    12                                  
+    13                                  ;segment data use32 class=data
+    14                                  
+    15                                  
+    16 00000000 256420697320256F20-     msg db "%d is %o in base 8 and %c in ascii code", 13, 10, 0
+    16 00000009 696E20626173652038-
+    16 00000012 20616E642025632069-
+    16 0000001B 6E2061736369692063-
+    16 00000024 6F64650D0A00       
+    17                                          
+    18                                  ;segment code use32 public code
+    19                                      base_8_and_ascii_code:
+    20 0000002A 8B442404                        mov eax, [esp + 4]
+    21                                          
+    22 0000002E 50                              push eax
+    23 0000002F 50                              push eax
+    24 00000030 50                              push eax
+    25 00000031 68[00000000]                    push dword msg
+    26 00000036 FF15[00000000]                  call[printf]
+    27 0000003C 83C40C                          add esp, 4*3
+    28                                          
+    29 0000003F C20400                          ret 4
+    30                                          
+    31                                          
+    32                                          
+    33                                          
+    34                                      
+    35                                      
+    36                                      

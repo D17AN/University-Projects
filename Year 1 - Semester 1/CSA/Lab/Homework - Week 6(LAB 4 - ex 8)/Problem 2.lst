@@ -1,0 +1,67 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13                                      ; A, B - words, C - byte, D - doubleword
+    14 00000000 F44A                        a dw 0100101011110100b
+    15 00000002 696C                        b dw 0110110001101001b
+    16 00000004 <res 00000001>              c resb 1   
+    17 00000005 <res 00000004>              d resd 1 
+    18                                  ; our code starts here
+    19                                  segment code use32 class=code
+    20                                      start:
+    21                                          
+    22                                          ;Problem statement
+    23                                          ;Given the words A and B, compute the byte C as follows:    
+    24                                          ;the bits 0-5 are the same as the bits 5-10 of A
+    25                                          ;the bits 6-7 are the same as the bits 1-2 of B.
+    26 00000000 B200                            mov DL, 0; the result will be computed in DL
+    27 00000002 66A1[00000000]                  mov AX, [a]; AX = a  
+    28 00000008 668B1D[02000000]                mov BX, [b]; BX = b 
+    29 0000000F 6683E03F                        and AX, 0000000000111111b; AX will keep only the bits from 0-5
+    30 00000013 6681E3C000                      and BX, 0000000011000000b; BX will keep only the bits from 6-7
+    31 00000018 08DA                            or DL, BL; DL will contain the result C = 0111 0100b
+    32 0000001A 8815[04000000]                  mov byte [c], DL; c = DL 
+    33                                          
+    34                                          ;Compute the doubleword D as follows:
+    35                                          ;the bits 0-7 are the same as the bits 8-15 of B
+    36                                          ;the bits 8-15 are the same as the bits of C
+    37                                          ;the bits 16-23 are the same as the bits 8-15 of A
+    38                                          ;the bits 24-31 are the same as the bits 0-7 of A
+    39                                          
+    40 00000020 C705[05000000]0000-             mov dword[d], 0; where the result will be computed 
+    40 00000028 0000               
+    41                                          
+    42                                          ;the bits 0-7 are the same as the bits 8-15 of B
+    43 0000002A 66A1[02000000]                  mov AX, [b]; AX = b
+    44 00000030 66C1E808                        shr AX, 8; shift to right 8 bits
+    45 00000034 98                              cwde; AX converts to EAX
+    46 00000035 0905[05000000]                  or dword [d], EAX; setting the 0-7bits with EAX
+    47                                          
+    48                                          ;the bits 8-15 are the same as the bits of C
+    49 0000003B A0[04000000]                    mov AL, [c]; AL = c
+    50 00000040 6698                            cbw; convert AL to AX
+    51 00000042 98                              cwde; convert AX to EAX
+    52 00000043 C1E008                          shl EAX, 8; shift to left 8 bits
+    53 00000046 0905[05000000]                  or dword [d], EAX; setting the 8-15bits with EAX
+    54                                          
+    55                                         ;the bits 16-23 are the same as the bits 8-15 of A
+    56                                         ;the bits 24-31 are the same as the bits 0-7 of A 
+    57 0000004C 66A1[00000000]                  mov AX, [a]
+    58 00000052 66C1C008                        rol AX, 8; rotate AX with 8 bits to the left 
+    59 00000056 98                              cwde; convert AX to EAX
+    60 00000057 C1E010                          shl EAX, 16; shift to the left 16 bits
+    61 0000005A 0905[05000000]                  or dword [d], EAX; setting the 16-31bits with EAX // d = 1111 0100 0100 1010 0111 0100 0110 1100b = F44A746C
+    62                                          
+    63                                          ; exit(0)
+    64 00000060 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    65 00000062 FF15[00000000]                  call    [exit]       ; call exit to terminate the program
+    66                                          

@@ -1,0 +1,36 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  
+     4                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     5                                  global start        
+     6                                  
+     7                                  ; declare external functions needed by our program
+     8                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     9                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    10                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    11                                  
+    12                                  ; our data is declared here (the variables needed by our program)
+    13                                  segment data use32 class=data
+    14                                      ; A, B - words, C - byte
+    15 00000000 F44A                        a dw 0100101011110100b
+    16 00000002 696C                        b dw 0110110001101001b
+    17 00000004 <res 00000001>              c resb 1    ; C should be 0111 0100b
+    18                                  
+    19                                  ; our code starts here
+    20                                  segment code use32 class=code
+    21                                      start:
+    22                                          ;Problem statement
+    23                                          ;Given the words A and B, compute the byte C as follows:    
+    24                                          ;the bits 0-5 are the same as the bits 5-10 of A
+    25                                          ;the bits 6-7 are the same as the bits 1-2 of B.
+    26 00000000 668325[00000000]3F              and word [a], 0000000000111111b; A = 0000 0000 0011 0100b // retaining only the bits from 0 to 5
+    27 00000008 668125[02000000]C0-             and word [b], 0000000011000000b; B = 0000 0000 0100 0000 // retaining only the bits from 6 to 7
+    27 00000010 00                 
+    28 00000011 8A1D[00000000]                  mov BL, byte [a]; BX = a 
+    29 00000017 0A1D[02000000]                  or BL, byte [b]; BL will retain the result
+    30 0000001D 881D[04000000]                  mov byte [c], BL
+    31                                          
+    32                                          
+    33                                          ; exit(0)
+    34 00000023 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    35 00000025 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

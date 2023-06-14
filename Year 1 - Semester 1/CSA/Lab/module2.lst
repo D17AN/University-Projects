@@ -1,0 +1,21 @@
+     1                                  bits 32
+     2                                  
+     3                                  global _ascii_code
+     4                                  extern printf
+     5                                  import printf msvcrt.dll
+     6                                  segment data use32 class=data
+     7 00000000 2563000000000000            format dd "%c", 0
+     8                                      
+     9                                  
+    10                                  ; our code starts here
+    11                                  segment code use32 class=code
+    12                                  _ascii_code:
+    13 00000000 55                              push ebp
+    14 00000001 89E5                            mov ebp, esp
+    15 00000003 8B4508                          mov eax, [ebp + 8]
+    16 00000006 50                              push eax
+    17 00000007 68[00000000]                    push dword format
+    18 0000000C FF15[00000000]                  call[printf]
+    19 00000012 89EC                            mov esp, ebp
+    20 00000014 5D                              pop ebp
+    21 00000015 C3                              ret 

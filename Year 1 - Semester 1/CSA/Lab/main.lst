@@ -1,0 +1,44 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  extern base_8_and_ascii_code
+     6                                  extern printf
+     7                                  import printf msvcrt.dll
+     8                                  ; declare external functions needed by our program
+     9                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    11                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    12                                  
+    13                                  ; our data is declared here (the variables needed by our program)
+    14                                  segment data use32 class=data
+    15 00000000 42756E612064696D69-         msg db "Buna dimineata,", 13, 10, "Fie ca razele soarelui sa va mangaie fata!", 13, 10, 0
+    15 00000009 6E656174612C0D0A46-
+    15 00000012 69652063612072617A-
+    15 0000001B 656C6520736F617265-
+    15 00000024 6C7569207361207661-
+    15 0000002D 206D616E6761696520-
+    15 00000036 66617461210D0A00   
+    16                                  
+    17                                      
+    18                                  segment code use32 class=code
+    19                                      start:
+    20                                          ; ...
+    21 00000000 68[00000000]                    push dword msg
+    22 00000005 FF15[00000000]                  call[printf]
+    23 0000000B 83C404                          add esp, 4
+    24                                          
+    25 0000000E B920000000                      mov ecx, 32
+    26                                          start_for:
+    27 00000013 83F97E                              cmp ecx, 126
+    28 00000016 7F0A                                jg end_for
+    29                                              
+    30 00000018 51                                  push ecx
+    31 00000019 FF15[00000000]                      call [base_8_and_ascii_code]
+    32 0000001F 41                                  inc ecx
+    33 00000020 EBF1                                jmp start_for
+    34                                          end_for:
+    35                                           
+    36                                          ; exit(0)
+    37 00000022 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    38 00000024 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

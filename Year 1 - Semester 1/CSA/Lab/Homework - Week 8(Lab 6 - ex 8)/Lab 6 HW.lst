@@ -1,0 +1,109 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit, printf               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  import printf msvcrt.dll
+    11                                  ;A list of doublewords is given. 
+    12                                  ;Obtain the list made out of the low bytes of the high words of each doubleword 
+    13                                  ;from the given list with the property that these bytes are palindromes in base 10
+    14                                  
+    15                                  ; our data is declared here (the variables needed by our program)
+    16                                  segment data use32 class=data
+    17                                      ;s DD 12345678h, 1A2C3C4Dh, 98FCDC76h
+    18                                      ;d DB 2Ch, FCh.
+    19 00000000 785634124D3C2C1A76-         s dd 12345678h, 1A2C3C4Dh, 98FCDC76h
+    19 00000009 DCFC98             
+    20                                      s_len equ ($-s)/4
+    21 0000000C 00<rept>                    d times s_len db 0
+    22 0000000F 0A                          ten db 10
+    23 00000010 <res 00000001>              quotient1 resb 1
+    24 00000011 <res 00000001>              remainder1 resb 1
+    25 00000012 <res 00000002>              remainder2 resw 1
+    26 00000014 <res 00000001>              nr_digits1 resb 1
+    27 00000015 <res 00000001>              nr_digits2 resb 1
+    28 00000016 00000000                    d_len dd 0
+    29 0000001A 25782C2000                  format db "%x, ", 0 
+    30                                  ; our code starts here
+    31                                  segment code use32 class=code
+    32                                      start:
+    33 00000000 BE[00000000]                    mov esi, s; esi = s 
+    34 00000005 BF[0C000000]                    mov edi, d; edi = d 
+    35 0000000A B903000000                      mov ecx, s_len; ecx = lenght of string s  
+    36 0000000F FC                              cld;clear direction flag 
+    37                                          
+    38                                          for1_label:
+    39 00000010 83F900                              cmp ecx, 0
+    40 00000013 0F849E000000                        je end_for1
+    41 00000019 AD                                  lodsd; eax = the double word from <ds:esi> loaded in EAX 
+    42 0000001A C1C810                              ror eax, 16; rotate eax with 16 bits to right
+    43 0000001D 88C3                                mov bl, al; bl = al 
+    44 0000001F B800000000                          mov eax, 0; eax = 0
+    45 00000024 88D8                                mov al, bl; al = bl
+    46 00000026 C605[14000000]00                    mov byte[nr_digits1], 0
+    47                                              split_digits:
+    48 0000002D B400                                    mov ah, 0
+    49 0000002F F635[0F000000]                          div byte[ten]; al = ax / 10, ah = ax % 10
+    50 00000035 A2[10000000]                            mov byte[quotient1], al; quotient1 = al 
+    51 0000003A 8825[11000000]                          mov byte[remainder1], ah; remainder1 = ah
+    52 00000040 A0[11000000]                            mov al, byte[remainder1]; al  = remainder1 // here shit happens
+    53 00000045 B400                                    mov ah, 0
+    54 00000047 6650                                    push ax; push on the stack ax(the remainder)
+    55 00000049 66B80000                                mov ax, 0; reseting the value of ax
+    56 0000004D A0[10000000]                            mov al, byte[quotient1];al = quotient1, al takes its initial value after the division with ten
+    57 00000052 FE05[14000000]                          inc byte[nr_digits1]; counting the number of digits of the number
+    58 00000058 3C00                                    cmp al, 0; if al != 0 -> repeat the process
+    59 0000005A 75D1                                    jne split_digits
+    60 0000005C 88D8                                mov al, bl; al = bl
+    61 0000005E C605[15000000]00                    mov byte[nr_digits2], 0
+    62                                              Pal:
+    63 00000065 B400                                    mov ah, 0
+    64 00000067 F635[0F000000]                          div byte[ten]; al = ax / 10, ah = ax % 10
+    65 0000006D A2[10000000]                            mov byte[quotient1], al; quotient1 = al
+    66 00000072 8825[11000000]                          mov byte[remainder1], ah; remainder1 = ah
+    67 00000078 A0[11000000]                            mov al, byte[remainder1]; al = remainder1 
+    68 0000007D B400                                    mov ah, 0
+    69 0000007F 665A                                    pop dx; take from the stack the complement digit of the current digit from the current number
+    70 00000081 6639D0                                  cmp ax, dx; if both digits share the same value, then we inc nr_digits2
+    71 00000084 7506                                    jne isnotvalid
+    72                                                  isvalid:
+    73 00000086 FE05[15000000]                              inc byte[nr_digits2]
+    74                                                  isnotvalid:
+    75 0000008C 66B80000                                mov ax, 0; reseting the value of ax
+    76 00000090 A0[10000000]                            mov al, byte[quotient1]; reseting the initial value of al after the division with 10
+    77 00000095 3C00                                    cmp al, 0; if al != 0 -> repeat the process
+    78 00000097 75CC                                    jne Pal
+    79 00000099 A0[14000000]                        mov al, byte[nr_digits1]
+    80 0000009E 8A15[15000000]                      mov dl, byte[nr_digits2]
+    81 000000A4 38D0                                cmp al, dl; if the number is not a palindrome
+    82 000000A6 7509                                jne isnotpalindrome
+    83                                              ispalindrome:
+    84 000000A8 88D8                                    mov al, bl; al = bl
+    85 000000AA AA                                      stosb; <DS:EDI>  = al // add the palindrome to string d
+    86 000000AB FF05[16000000]                          inc dword[d_len]
+    87                                              isnotpalindrome:
+    88 000000B1 49                                  dec ecx
+    89 000000B2 E959FFFFFF                          jmp for1_label
+    90                                              
+    91                                          end_for1:
+    92                                          
+    93 000000B7 8B0D[16000000]                  mov ecx, dword[d_len]
+    94 000000BD BE00000000                      mov esi, 0
+    95 000000C2 E314                            jecxz end_loop
+    96                                          start_loop:
+    97 000000C4 FF3437                              push dword[edi + esi]
+    98 000000C7 68[1A000000]                        push dword format
+    99 000000CC FF15[00000000]                      call [printf]
+   100 000000D2 83C408                              add esp, 4*2
+   101 000000D5 46                                  inc esi
+   102 000000D6 E2EC                            loop start_loop
+   103                                          end_loop:
+   104                                          
+   105                                          
+   106                                          ; exit(0)
+   107 000000D8 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+   108 000000DA FF15[00000000]                  call    [exit]       ; call exit to terminate the program

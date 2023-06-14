@@ -1,0 +1,81 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13                                      ; a,b-word; c,d-byte; e-doubleword; x-qword  - Unsigned represantation 
+    14 00000000 0100                        a dw 1
+    15 00000002 0100                        b dw 1
+    16 00000004 01                          c db 1
+    17 00000005 01                          d db 1 
+    18 00000006 01000000                    e dd 1
+    19 0000000A 0100000000000000            x dq 1
+    20 00000012 <res 00000004>              var1 resd 1
+    21                                      
+    22                                  ; our code starts here
+    23                                  segment code use32 class=code
+    24                                      start:
+    25                                          ; Problem statement  1/a+200*b-c/(d+1)+x/a-e ;
+    26 00000000 B801000000                      mov EAX, 1; EAX = 1
+    27 00000005 50                              push EAX
+    28 00000006 6658                            pop AX
+    29 00000008 665A                            pop DX; DX:AX = EAX 
+    30                                          
+    31 0000000A 66F735[00000000]                div word [a]; AX = DX:AX / a = 1 / a
+    32 00000011 6689C3                          mov BX, AX; BX = AX // BX = 1 / a
+    33                                          
+    34 00000014 66A1[02000000]                  mov AX, [b]
+    35 0000001A 66B9C800                        mov CX, 200; CX = 200
+    36 0000001E 66F7E1                          mul CX; DX:AX = AX * CX = b * 200
+    37                                          
+    38 00000021 66B90000                        mov CX, 0; converting BX to CX:BX // word to double word // CX:BX = 1 / a
+    39                                          
+    40 00000025 F8                              clc; clear carry flag 
+    41 00000026 6601C3                          add BX, AX
+    42 00000029 6611D1                          adc CX, DX; CX:BX = CX:BX - DX:AX = 1/a + 200*b
+    43                                                  
+    44 0000002C A0[04000000]                    mov AL, [c]; AL = c 
+    45 00000031 B400                            mov AH, 0; converting AL to AX; AX = c 
+    46                                          
+    47 00000033 8A15[05000000]                  mov DL, [d]; DL = d
+    48 00000039 80C201                          add DL, 1; DL = d + 1
+    49 0000003C F6F2                            div DL; AL = AX / DL = c / (d+1)
+    50                                          
+    51 0000003E B400                            mov AH, 0; converting AL to AX
+    52 00000040 66BA0000                        mov DX, 0; converting AX to DX:AX 
+    53                                          
+    54 00000044 6629C3                          sub BX, AX 
+    55 00000047 6619D1                          sbb CX, DX; CX:BX = CX:BX - DX:AX = 1/a + 200*b - c/(d+1) 
+    56                                          
+    57 0000004A 66A1[00000000]                  mov AX, [a]; AX = a 
+    58 00000050 66BA0000                        mov DX, 0; converting AX to DX:AX 
+    59                                          
+    60 00000054 66A3[12000000]                  mov word [var1], AX
+    61 0000005A 668915[14000000]                mov word [var1+2], DX ; var1 = DX:AX = a
+    62                                          
+    63 00000061 A1[0A000000]                    mov EAX, dword [x]
+    64 00000066 8B15[0E000000]                  mov EDX, dword [x+4]; EDX:EAX = x 
+    65                                          
+    66 0000006C F735[12000000]                  div dword [var1]; EAX = EDX:EAX / var1 = x / a
+    67 00000072 50                              push EAX
+    68 00000073 6658                            pop AX 
+    69 00000075 665A                            pop DX; DX:AX = EAX
+    70                                          
+    71 00000077 F8                              clc; clear carry flag 
+    72 00000078 6601C3                          add BX, AX 
+    73 0000007B 6611D1                          adc CX, DX; CX:BX = CX:BX - BX:AX = 1/a + 200*b - c/(d+1) + x / a
+    74                                          
+    75                                          
+    76 0000007E 662B1D[06000000]                sub BX, [e]
+    77 00000085 661B0D[08000000]                sbb CX, [e+2]; CX:BX = CX:BX - e = 1/a + 200*b- c/(d+1) + x / a - e
+    78                                          
+    79                                          ; exit(0)
+    80 0000008C 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    81 0000008E FF15[00000000]                  call    [exit]       ; call exit to terminate the program
