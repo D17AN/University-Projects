@@ -1,0 +1,168 @@
+				Documentation
+	
+
+For representing a graph we define the class Graph
+The class graph provides the following methods:
+- def __init__(self, vertices):
+    """
+    Constructor for the class graph, constructs a graph without edges
+    :param vertices: an iterable, containing the vertices of the graph
+    """
+
+- def __str__(self):
+    """
+    :return: a string, the way in which the graph will be displayed
+    """
+
+- def add_edge(self, x, y, c):
+    """
+    Add an edge from x to y of cost c
+    Throws an exception if x and y are not valid vertices(exceeding the range of the nr of vertices)
+    :param x: integer, the source vertex
+    :param y: integer, the destination vertex
+    :param c: integer, the cost from x to y
+    """
+
+- def get_nr_vertices(self):
+    """
+    :return: the number of vertices
+    """
+
+- def get_nr_edges(self):
+    """
+    :return: the number of edges
+    """
+
+- def get_vertices(self):
+    """
+    :return: an iterable, the list of vertices
+    """
+
+- def is_edge(self, x, y):
+    """
+    Check if there's an edge from x to y
+    :param x: integer, the source vertex
+    :param y: integer, the destination vertex
+    :return: true if there's an edge from x to y, false otherwise
+    """
+
+- def out_degree(self, v):
+    """
+    Get the out degree of a vertex
+    :param v: integer, the given vertex
+    :return: the number of edges which have as source the vertex v
+    """
+
+- def in_degree(self, v):
+    """
+    Get the in degree of a vertex
+    :param v: integer, the given vertex
+    :return: the number of edges which have as destination the vertex v
+    """
+
+- def out_neighbours(self, x):
+    """
+    Get the out neighbours of x
+    :param x: integer, a given vertex
+    :return: an iterable, which contain all y vertices, such that x is adjacent with y
+    """
+
+- def in_neighbours(self, y):
+    """
+    Get the in neighbours of y
+    :param y: integer, a given vertex
+    :return: an iterable, which contain all x vertices, such that x is adjacent with y
+    """
+
+- def modify_cost_edge(self, x, y, new_c):
+    """
+    Modify the cost of an edge starting from x and ending at y
+    :param x: integer, the source vertex
+    :param y: integer, the destination vertex
+    :param new_c: integer, the new cost of the edge
+    Throws an exception if there's no edge from x to y
+    """
+
+- def get_cost_edge(self, x, y):
+    """
+    Get the cost of an edge starting from x and ending at y
+    :param x: integer, the source vertex
+    :param y: integer, the destination vertex
+    Throws an exception if there's no edge from x to y
+    :return: the cost of the edge (x, y)
+    """
+
+def remove_vertex(self, v):
+    """
+    Remove all the edges between a given vertex and any other vertex from the graph
+    :param v: integer, the given vertex
+    Throws an exception if the vertex v does not exist in the graph
+    The graph does not contain longer the edges between v and any other vertex
+    """
+
+def remove_edge(self, x, y):
+    """
+    Remove an edge between 2 vertices
+    :param x: integer, the source vertex
+    :param y: integer, the destination vertex
+    Throws an exception if there's no edge between x and y
+    The graph does not contain longer the edge between x and y
+    """
+
+def create_copy(self):
+    """
+    Creates a copy of the current graph which is independent by it
+    :return: the copy of the graph
+    """
+
+For the representation of the graph have been used 3 dictionaries:
+- One for representing the edges of the graph.
+  An edge is represented as a pair key, value. The key is a tuple which contains the source and target vertex of the edge.
+  The value represents the cost of the edge.
+- One for representing for each vertex all the out neighbours.
+- One for representing for each vertex all the in neighbours.
+
+
+External functions:
+- def read_graph(txt_file: str):
+    """
+    Creates a graph with the input of a text file
+    :param txt_file: string, the file which contains the input
+    :return: the graph from the the text file
+    """
+
+- def write_graph(g:Graph, txt_file: str):
+    """
+    Write in a text file a given graph
+    :param g: graph
+    :param txt_file: string, the file where should be written the graph
+    """
+
+- def create_random_graph(n:int, m:int):
+    """
+    Create a random graph being given the number of vertices and edges
+    :param n: integer, the number of vertices
+    :param m: integer, the number of edges
+    Throws an exception if the number of edges is bigger than n(n-1)
+    :return: a new graph containing n vertices and m edges
+    """
+
+The user can execute the following commands:
+    At the beginning of the program he has the option to choose between generating a random graph or read one from an existing file
+    After he selected the desired option he can execute the following commands:
+        1. Add edge
+        2. Get nr of vertices
+        3. Get nr of edges
+        4. Check edge
+        5. Get the out degree of vertex
+        6. Get the in degree of vertex
+        7. Get the out neighbours of a vertex
+        8. Get the in neighbours of a vertex
+        9. Get the cost of an edge
+        10. Modify the cost of an edge
+        11. Remove a vertex
+        12. Remove an edge
+        13. Save graph in file
+        14. Print graph
+        15. Exit application
+
