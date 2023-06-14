@@ -1,0 +1,3 @@
+Andrei|1|19
+Daniel|0|17
+Denis|2|11

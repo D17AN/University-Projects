@@ -1,0 +1,5 @@
+task1|open|1
+task2|in_progress|3
+task3|in_progress|4
+task4|closed|3
+task6|open|2

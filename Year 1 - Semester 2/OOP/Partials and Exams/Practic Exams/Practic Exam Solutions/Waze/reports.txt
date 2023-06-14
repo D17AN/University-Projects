@@ -1,0 +1,6 @@
+description;marco;50;50;0;0
+description2;radu;50;50;0;0
+description3;marco;10;10;1;2
+description4;andrei;10;10;1;2
+12;radu;10;10;1;2
+a;marco;20;20;0;1

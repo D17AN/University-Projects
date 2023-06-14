@@ -1,0 +1,4 @@
+Andrei|1
+mihai|2
+vasile|3
+ion|4

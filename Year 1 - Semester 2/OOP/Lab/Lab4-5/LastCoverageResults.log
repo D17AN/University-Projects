@@ -1,0 +1,45 @@
+[2023-03-30 16:14:31] [info] Start Program:
+Path:".\\bin\\x64\\Debug\\Lab4-5.exe"
+Arguments:
+Working directory: not set.
+Modules: Selected: * Excluded: 
+Sources: Selected: Lab4-5 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 1
+Export: html 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+[2023-03-30 16:14:31] [info] Module: C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\OOP\Lab\Lab4-5\Lab4-5\bin\x64\Debug\Lab4-5.exe is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\ntdll.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\kernel32.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\KernelBase.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\vcruntime140d.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\msvcp140d.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\vcruntime140_1d.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\ucrtbased.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\ole32.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\ucrtbase.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\rpcrt4.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\combase.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\gdi32.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\win32u.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\gdi32full.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\msvcp_win.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\user32.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [info] Module: C:\Windows\System32\imm32.dll is selected because it matches selected pattern: *
+[2023-03-30 16:14:31] [error] 
+
+----------------------------------------------------
+*** Your application has thrown an unhandled exception. Code: 3765269347: Exception C++
+----------------------------------------------------
+See https://github.com/OpenCppCoverage/OpenCppCoverage/wiki/FAQ#your-application-has-thrown-an-unhandled-exception-code-3221225477-exception_access_violation for additional information.
+[2023-03-30 16:14:31] [info] ----------------------------------------------------
+[2023-03-30 16:14:31] [info] Coverage generated in Folder C:\Coding Apps\Info - University\Year 2\Sem2 2022-2023\OOP\Lab\Lab4-5\Lab4-5\CoverageReport-2023-03-30-16h14m31s
+[2023-03-30 16:14:31] [info] ----------------------------------------------------
+[2023-03-30 16:14:31] [info] The code coverage report is not what you expect? See the FAQ https://github.com/OpenCppCoverage/OpenCppCoverage/wiki/FAQ.
+[2023-03-30 16:14:31] [error] Your program stop with error code: -529697949

@@ -1,0 +1,6 @@
+1|De cati programatori este nevoie sa schimbi un bec?|niciunul|10
+2|Cat face 1 + 1?|10|35
+3|Ce constanta are valoarea ~3.14?|pi|20
+4|Ce constanta are valoare ~2.71|e|20
+10|Ce culoare are cerul?|albastru|37
+11|Ce culoare are apa?|incolora|44

@@ -1,0 +1,10 @@
+Steaua1,Constellation1,2,3,5
+Steaua6,Constellation1,3,4,9
+Steaua2,Constellation1,4,5,10
+Steaua5,Constellation1,1,1,20
+Iris3,Constellation1,2,5,100
+Iris4,Constellation1,1,5,100
+Iris,Constellation1,2,3,1002
+Iris2,Constellation1,2,3,2004
+Steaua3,Constellation2,1,2,3
+Steaua4,Constellation2,4,5,6

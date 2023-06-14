@@ -1,0 +1,6 @@
+obiect1|categorie1|100
+obiect2|categorie2|111
+obiect3|categorie1|100
+obiect4|categorie10|1000
+obiect5|categorie1|10
+obijsd|categorie1|0

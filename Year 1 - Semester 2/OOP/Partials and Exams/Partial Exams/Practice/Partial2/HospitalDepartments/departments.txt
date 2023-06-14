@@ -1,0 +1,3 @@
+Regina_Maria|4|10|12|9.000000
+Regina_Maria|10|100
+Sf_Spiridon|10|10

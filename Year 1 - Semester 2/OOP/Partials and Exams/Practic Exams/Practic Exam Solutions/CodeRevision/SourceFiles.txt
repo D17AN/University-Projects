@@ -1,0 +1,5 @@
+Task1|revised|Andrei|Denis
+Task2|revised|Daniel|Andrei
+Task3|revised|Denis|Andrei
+Task4|revised|Daniel|Denis
+Task5|not_revised|Daniel|none

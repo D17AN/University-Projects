@@ -1,0 +1,10 @@
+m|blue|199|5|https://cdn-images.farfetch-contents.com/19/25/70/68/19257068_42240728_1000.jpg
+l|red|250|7|https://cdn-images.farfetch-contents.com/18/21/51/34/18215134_38830602_1000.jpg
+xl|green|180|12|https://cdn.aboutstatic.com/file/images/34efb681dfda4faea7b3ef787b15dd62.jpg?brightness=0.96&quality=75&trim=1&height=1280&width=960
+l|purple|199|6|https://www.williamjacket.com/wp-content/uploads/2022/01/the-matrix-4-morpheus-purple-long-trench-coat.webp
+xl|grey|149|7|https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/45/p00714407.jpg
+s|brown|299|2|https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/59/p00613424.jpg
+l|orange|179|100|https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/77/p00653152.jpg
+l|maroon|160|10|https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/f6/p00675833.jpg
+m|ruby|250|1|https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/f0/p00648669.jpg
+s|red|249|9|https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/f0/p00648669.jpg

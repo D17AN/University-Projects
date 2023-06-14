@@ -1,0 +1,3 @@
+marian|1|collector
+mircea2|2|admin
+daniel|3|collector

@@ -1,0 +1,4 @@
+1|3|iulian|depinde de foarfeca|3
+2|2|leonard|da-te cu capul de masa si spune-mi si mie|3
+3|3|cosmin|doar daca imi dai 5 lei|2
+4|1|cosmin|da|1
