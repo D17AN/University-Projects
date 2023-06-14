@@ -1,0 +1,121 @@
+#1. Write a bash script that calculates the sum of the sizes of all text files in a given folder.
+
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+	echo "Please provide exactly one argument"
+	exit
+fi
+
+sum=0
+for i in `ls "$1"`; do
+	if [ -f "$1/$i" ]; then
+		isfile=`file "$1/$i" | grep -c "text"`
+		if [ $isfile -eq 1 ]; then
+			fsize=`du -b "$1/$i" | cut -f1`
+			sum=$((sum+fsize))
+		fi
+	fi
+done
+
+echo "Total size: $sum"
+
+#2. Write a script that reads filenames until the word "stop" is entered. For each filename, check if it is a text file and if it is, print the number of words on the first line.
+
+#!/bin/bash
+
+while [ 1 -eq 1 ]; do
+        read A
+        if [ -f $A ] && [ $(file "$A" | grep -c "text") -eq 1 ]; then
+                head -n 1 $A | wc -w
+        fi
+done
+
+#3. Write a script that receives as command line arguments pairs consisting of a filename and a word. For each pair, check if the given word appears at least 3 times in the file and print a corresponding message.
+
+#!/bin/bash
+
+while [ $# -gt 0 ]; do
+	filename=$1
+	word=$2
+	cnt=0
+	words=$(cat $filename)
+	for w in $words; do
+		if [ $w == $word ]; then
+			cnt=$((cnt+1))
+		fi
+	done
+	if [ $cnt -gt 2 ]; then
+		echo "yeaa"
+	fi
+	shift 2
+done
+
+#4. Sort all files given as command line arguments descending by size.
+
+#!/bin/bash
+
+var=""
+for word in $@; do
+	cnt=$(du -b $word)
+	var="$var$cnt $word"$'\n'
+done
+echo "$var"
+echo "$var" | sort -rn
+
+#5. Write a script that extracts from all the C source files given as command line arguments the included libraries and saves them in a file.
+
+#!/bin/bash
+
+ans=""
+
+for filename in $@; do
+	if file $filename | grep -q "C source"; then
+		ans="$ans"$(grep "#include" $filename)$'\n'
+	fi
+done
+
+echo "$ans"
+echo "$ans" | grep -v "^$" | sort | uniq > libs
+
+# 6. Seminar problem: Write a script that monitors the state of a given folder and prints a message when something changed.
+
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+	echo "Needs exactly one argument"
+	exit 1
+fi
+
+if [ ! -d $1 ];then
+	echo "Not a directory"
+	exit 1
+fi
+
+first=0
+
+while true; do
+	bkp=$IFS
+	IFS=$'\n'
+	args=$(find $1)
+	state=""
+	for fl in $args; do
+		if [ -f $fl ]; then
+			props=$(ls -l $fl | sha256sum)
+			content=$(sha256sum $fl)
+		fi
+		if [ -d $fl ]; then
+			props=$(ls -ld $fl | sha256sum)
+			content=$(ls -l $fl | sha256sum)
+		fi
+		state=$state$'\n'"$props $content"
+	done
+	IFS=$bkp
+	if [ "$oldstate" != "$state" ] && [ $first -eq 1 ]; then
+		echo "Directory state changed"
+	fi
+	oldstate=$state
+	first=1
+	sleep 1
+done
+

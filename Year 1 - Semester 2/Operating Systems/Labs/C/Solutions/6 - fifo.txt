@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
+#include<time.h>
+#include <sys/wait.h>
+int generateNR(){
+    int n;
+    srand(time(0));
+    n = rand() % 200 + 1;
+    while(n < 50){
+        n = rand() % 200 + 1;
+    }
+    return n;
+}
+int main(int argc, char** argv){
+    if(mkfifo("myfifo1", 0777) == -1){
+        if(errno != EEXIST){
+            printf("Something wrong when creating 1st FIFO.\n");
+            return -1;
+        }
+    }
+    if(mkfifo("myfifo2", 0777) == -1){
+        if(errno != EEXIST){
+            printf("Something wrong when creating 2nd FIFO.\n");
+            return -1;
+        }
+    }
+
+    int id = fork();
+    if(id != 0){
+        //parent process - A
+        int fd1 = open("myfifo1", O_WRONLY);
+        int fd2 = open("myfifo2", O_RDONLY);
+        int nr = generateNR();
+        int isRunning = 1;
+        while(isRunning){
+            if(nr % 2 == 0){
+                write(fd1, &nr, sizeof(int));
+                printf("A sent to B %d\n", nr);
+            }
+            else{
+                int new_nr = nr + 1;
+                write(fd1, &new_nr, sizeof(int));
+                printf("A sent to B %d + 1\n", nr);
+            }
+            int new_nr;
+            read(fd2, &new_nr, sizeof(int));
+            printf("Got %d from B\n", new_nr);
+            nr = new_nr;
+            if(nr < 5)
+                isRunning = 0;
+        }
+        while(wait(NULL) != -1);
+        close(fd1);
+        close(fd2);
+    }
+    else{
+        //child process - B
+        int fd1 = open("myfifo1", O_RDONLY);
+        int fd2 = open("myfifo2", O_WRONLY);
+        int isRunning = 1;
+        while(isRunning){
+            int res;
+            read(fd1, &res, sizeof(int));
+            res /= 2;
+            write(fd2, &res, sizeof(int));
+            if(res < 5)
+                isRunning = 0;
+        }
+        close(fd1);
+        close(fd2);
+    }
+    return 0;
+}

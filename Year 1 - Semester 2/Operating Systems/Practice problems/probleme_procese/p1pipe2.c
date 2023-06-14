@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/wait.h>
+#include<string.h>
+int main(int argc, char** argv){
+    if(argc < 2){
+        printf("The number of elements needs to be provided!\n");
+        return 0;
+    }
+    int fd[2]; //filedescriptors for pipe
+    if(pipe(fd) != 0){
+        printf("Error in creating the pipe!\n");
+        return -1;
+    }
+    int id1 = fork();
+    if(id1 == 0){
+        //child
+        int n, res = 0, el;
+        read(fd[0], &n, sizeof(int));
+        
+        for(int i = 0; i < n; i++){
+            read(fd[0], &el, sizeof(int));
+            res = res + el;
+        }
+        close(fd[0]);
+        write(fd[1], &res, sizeof(int));
+        close(fd[1]);
+    }else{
+        //parent
+        int n = atoi(argv[1]); // getting the number of element
+        write(fd[1], &n, sizeof(int));
+        printf("The generated numbers are: ");
+        for(int i = 0; i < n; i++){
+            int el = rand() % 100;
+            write(fd[1], &el, sizeof(int));
+            printf("%d ", el);
+        }
+        printf("\n");
+        close(fd[1]);//close the writing fd
+        while(wait(NULL) != -1);//waiting childs to terminate
+        int res;
+        read(fd[0], &res, sizeof(int));
+        close(fd[0]);//close the reading
+        printf("The average of the generated list is %d.\n", res);  
+    }
+    return 0;
+}

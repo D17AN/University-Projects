@@ -1,0 +1,128 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <errno.h>
+#include <unistd.h>
+int main(int argc, char**argv){
+    int f1f2[2], f2f3[2], f3f1[2];
+    int id1;
+    if(pipe(f1f2) == -1){
+        printf("Something went wrong when creating pipe f1f2.\n");
+        return -1;
+    }
+    if(pipe(f2f3) == -1){
+        printf("Something went wrong when creating pipe f2f3.\n");
+        return -1;
+    }
+    if(pipe(f3f1) == -1){
+        printf("Something went wrong when creating pipe f3f1.\n");
+        return -1;
+    }
+    
+    if((id1 = fork()) == -1){
+        printf("Something went wrong when creating fork 1.\n");
+        return -1;
+    
+    }
+    if(id1 != 0){
+        //Process A
+        close(f1f2[0]);
+        close(f2f3[1]);
+        close(f2f3[0]);
+        close(f3f1[1]);
+        int n, v[100];
+        kill(id1, SIGSTOP);
+        printf("Enter n: "); scanf("%d", &n); printf("\n");
+        for(int i = 0; i < n; i++){
+            printf("v[%d] = ", i);
+            scanf("%d", &v[i]);
+            printf("\n");
+        }
+        
+        printf("A, sending size n = %d to B\n", n);
+        write(f1f2[1], &n, sizeof(int));
+        printf("A, sent size n = %d to B\n", n);
+        for(int i = 0; i < n; i++){
+            printf("A, sending v[%d] = %d to B\n", i, v[i]);
+            write(f1f2[1], &v[i], sizeof(int));
+            printf("A, sent v[%d] = %d to B\n", i, v[i]);
+        }
+        kill(id1, SIGCONT);
+        close(f1f2[1]);
+        int res;
+        printf("A waiting for data from C\n");
+        read(f3f1[0], &res, sizeof(int));
+        printf("A got from C the result %d\n", res);
+        close(f3f1[0]);
+        while(wait(NULL) != -1);
+    }
+    else{
+        //Process B
+        int id2;
+        if((id2 = fork()) == -1){
+            printf("Something went wrong creating fork 2.\n");
+            return -1;
+        }
+        if(id2 != 0){
+            //Process B
+            close(f1f2[1]);
+            close(f2f3[0]);
+            close(f3f1[0]);
+            close(f3f1[1]);
+            int n, v[100];
+            kill(id2, SIGSTOP);
+            printf("B, Getting n from A...\n");
+            read(f1f2[0], &n, sizeof(int));
+            for(int i = 0; i < n; i++){
+                printf("B, geting v[%d] from A...\n", i);
+                read(f1f2[0], &v[i], sizeof(int));
+                printf("B, Got v[%d] = %d from A\n", i, v[i]);
+            }
+            close(f1f2[0]);
+            int nr = 3;
+            for(int i = 0; i < n; i++){
+                v[i] += nr;
+            }
+            printf("B, sending n to C...\n");
+            write(f2f3[1], &n, sizeof(int));
+            printf("B, sent size n = %d to C\n", n);
+            for(int i = 0; i < n; i++){
+                printf("B, sending v[%d] = %d to C\n", i, v[i]);
+                write(f2f3[1], &v[i], sizeof(int));
+                printf("B, sent v[%d] = %d to C\n", i, v[i]);
+            }
+            kill(id2, SIGCONT);
+            close(f2f3[1]);
+            while(wait(NULL) != -1);
+        }
+        else{
+            //Process C
+            close(f1f2[0]);
+            close(f1f2[1]);
+            close(f2f3[1]);
+            close(f3f1[0]);
+            int n, v[100];
+            kill(getppid(), SIGSTOP);
+            printf("C, Getting n from B...\n");
+            read(f2f3[0], &n, sizeof(int));
+            for(int i = 0; i < n; i++){
+                printf("C, geting v[%d] from B...\n", i);
+                read(f2f3[0], &v[i], sizeof(int));
+                printf("C, Got v[%d] = %d from B\n", i, v[i]);
+            }
+            close(f2f3[0]);
+            int res = 0;
+            for(int i = 0; i < n; i++){
+                res += v[i];
+            }
+            printf("C, Sending the sum = %d to A...\n", res);
+            write(f3f1[1], &res, sizeof(int));
+            printf("C, sent the sum = %d to A...\n", res);
+            kill(getppid(), SIGCONT);
+            close(f3f1[1]);
+        }
+    }
+    return 0;
+}

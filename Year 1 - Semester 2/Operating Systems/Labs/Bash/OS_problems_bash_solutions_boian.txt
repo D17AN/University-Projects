@@ -1,0 +1,89 @@
+# 1.Display a report showing the full name of all the users currently connected, and the number of processes belonging to each of them.
+
+arr=()
+app=()
+nr=0
+for x in $(cat who.fake | awk '{print $1}'); do
+    nr=$((nr+1))
+    arr[$nr]=$x
+    app[$nr]=0
+done
+bkp=$IFS
+IFS=$'\n'
+for x in $(cat ps.fake); do
+    for y in $(seq 1 $nr); do
+	if [ ${arr[$y]} == $(echo $x | cut -d' ' -f1) ]; then
+	    app[$y]=$((app[$y] + 1))
+	    break
+	fi
+    done
+done
+
+for x in $(seq 1 $nr); do
+    echo ${arr[$x]} ${app[$x]}
+done
+
+IFS=$bkp
+
+#Use grep -c you half wit
+
+
+# 2.Find recursively in a directory all ".c" files having more than 500 lines. Stop after finding 2 such files.
+
+for x in $(find *); do
+    if echo "$x" | grep -q "\.c$"; then
+	if [ $(wc -l $x | cut -d' ' -f1) -gt 500 ]; then
+	    times=$((times + 1))
+	    if [ $times -gt 2 ]; then
+		exit 0
+	    fi
+	    echo $x
+	fi
+    fi
+done
+
+
+# 3.Find recursively in a directory, all the files with the extension ".log" and sort their lines (replace the original file with the sorted content).
+
+if [ $# -ne 1 ]; then
+    echo YU STOOPID
+    exit 1
+fi
+
+if [ ! -d "$1" ]; then
+    echo YU DOUBLE STUPYD
+    exit 1
+fi
+
+bkp=$IFS
+IFS=$'\n'
+for x in $(find "$1"); do
+    if [ -f "$x" ] && echo "$x" | grep -q ".log$"; then
+	ans=$(sort "$x" | sed "s/\0//g")
+	printf "$ans" > "$x"
+    fi
+done
+IFS=$bkp
+
+
+# 8.Display all the mounted file systems who are either smaller than than 1GB or have less than 20% free space.
+
+bkp=$IFS
+IFS=$'\n'
+first=0
+for x in $(cat df.fake); do
+    if [ $first -eq 0 ]; then
+	first=1
+	continue
+    fi
+    sz=$(echo $x | awk '{print $2}' | sed 's#\(.*\).$#\1#')
+    use=$(echo $x | awk '{print $5}' | sed 's#\(.*\).$#\1#')
+    name=$(echo $x | awk '{print $6}')
+    if [ $sz -lt 1024 ] || [ $use -gt 80 ]; then
+	echo $name
+    fi
+done
+IFS=$bkp
+
+
+
