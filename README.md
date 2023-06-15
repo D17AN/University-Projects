@@ -48,6 +48,10 @@ UBB Computer Science 2021-2024
         <a href = "https://github.com/D17AN/University-Projects/tree/main/Year%201%20-%20Semester%202/OOP">
           🚑 Object Oriented Programming
       </li>
+      <li>
+        <a href = "https://github.com/D17AN/University-Projects/tree/main/Year%201%20-%20Semester%202/Operating%20Systems">
+          ⛓️ Operating Systems
+      </li>
     </ul>
   </li>
   <li>:open_file_folder: Year 2 - Semester 1
