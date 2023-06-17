@@ -1,0 +1,29 @@
+<div id="content">
+  <nav>
+    <a routerLink="/browseProducts">Browse Products</a>
+    <a routerLink="/browseBasket">See basket</a>
+  </nav>
+  <br>
+  <h1>Product Catalog</h1>
+
+  <!-- product name filter -->
+  <input type="text" [(ngModel)]="category" placeholder="Enter product name">
+  <button (click)="filterProducts()">Filter</button>
+  <br><br>
+
+  <!-- product list -->
+  <div id="product-list">
+    <div *ngFor="let product of products">
+      <h3>{{ product.NAME }}</h3>
+      <p>{{ product.CATEGORY }}</p>
+      <p>{{ product.PRICE }}</p>
+      <button (click)="addToCart(product)">Add to Cart</button>
+    </div>
+  </div>
+  
+
+  <div *ngIf="pages > 1" id="pagination">
+    <button *ngFor="let p of getPagesArray()" [disabled]="p === currentPage" (click)="changePage(p)">{{ p }}</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,18 @@
+<div id="content">
+    <nav>
+        <a routerLink="/browseProducts">Browse Products</a>
+        <a routerLink="/browseBasket">See basket</a>
+      </nav>
+      <h1>Basket</h1>
+
+      <div id="product-list">
+        <div *ngFor="let product of products">
+          <h3>{{ product.NAME }}</h3>
+          <p>{{ product.CATEGORY }}</p>
+          <p>{{ product.PRICE }}</p>
+          <button (click)="confirmRemoveFromBasket(product)">Remove</button>
+        </div>
+      </div>
+      
+      <router-outlet></router-outlet>
+</div>
